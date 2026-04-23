@@ -52,10 +52,9 @@ export const cabildo = [
 
 // ======== DIRECTORES DE ÁREA ========
 export const directores = [
-  { area: "DIF Municipal", titular: "Directora del DIF Municipal", nombre: "Por designar" },
+  { area: "DIF Municipal", titular: "Directora del DIF Municipal", nombre: "C. Amairani Hernández Parra" },
   { area: "Contraloría Interna", titular: "Contralor Interno", nombre: "L.C. Levit Hernández Jiménez" },
   { area: "Tesorería Municipal", titular: "Tesorera Municipal", nombre: "L.C. Mariela Cortes Hernández" },
-  { area: "Tesorería Municipal", titular: "Área de Tesorería", nombre: "C. Amairani Hernández Parra" },
   { area: "Instituto Municipal de las Mujeres", titular: "Directora", nombre: "C. Diana Laura Hernández Suárez" },
   { area: "Dirección Jurídica", titular: "Director Jurídico", nombre: "Lic. David Gustavo Grau González" },
   { area: "Catastro", titular: "Director de Catastro", nombre: "C. José Manuel Hernández Hernández" },
