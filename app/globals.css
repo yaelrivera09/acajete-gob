@@ -1,26 +1,104 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ============================================
+   PALETA DE ACAJETE (basada en el escudo oficial)
+   - Verde bosque: de los pinos del escudo
+   - Naranja: de la base del escudo  
+   - Verde azulado: de las montañas de fondo
+   - Crema: fondo suave institucional
+   ============================================ */
+
+@theme {
+  /* Colores de marca */
+  --color-brand-50: #f0f7f2;
+  --color-brand-100: #dcebe0;
+  --color-brand-200: #b8d6c1;
+  --color-brand-300: #8bb99a;
+  --color-brand-400: #5d9872;
+  --color-brand-500: #3f7c55;
+  --color-brand-600: #2e6343;
+  --color-brand-700: #265037;
+  --color-brand-800: #1f402d;    /* Verde bosque principal del escudo */
+  --color-brand-900: #163020;
+  --color-brand-950: #0a1c12;
+
+  /* Naranja institucional (del escudo) */
+  --color-accent-50: #fff5eb;
+  --color-accent-100: #ffe6ce;
+  --color-accent-200: #ffc89d;
+  --color-accent-300: #ffa362;
+  --color-accent-400: #ff8532;
+  --color-accent-500: #f26a1a;   /* Naranja principal */
+  --color-accent-600: #e35612;
+  --color-accent-700: #bc4112;
+  --color-accent-800: #963516;
+  --color-accent-900: #7a2e15;
+
+  /* Verde azulado suave (montañas del escudo) */
+  --color-mist-100: #e8f0ee;
+  --color-mist-200: #c8dbd6;
+  --color-mist-300: #9ebcb5;
+
+  /* Crema institucional */
+  --color-cream: #f8f5ee;
+  --color-ink: #1a1a1a;
+
+  /* Tipografías */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  /* Animaciones personalizadas */
+  --animate-fade-in: fadeIn 0.6s ease-out forwards;
+  --animate-fade-in-up: fadeInUp 0.7s ease-out forwards;
+  --animate-kenburns: kenburns 20s ease-out infinite alternate;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes kenburns {
+  from { transform: scale(1) translate(0, 0); }
+  to { transform: scale(1.1) translate(-2%, -1%); }
+}
+
+/* Estilos base del sitio */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar elegante con los colores de Acajete */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-800);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-700);
+}
+
+/* Selección de texto con el naranja */
+::selection {
+  background-color: var(--color-accent-500);
+  color: white;
 }
