@@ -7,11 +7,16 @@ export const siteConfig = {
   state: "Veracruz",
   period: "2026 — 2029",
   tagline: "Gobierno cercano, trabajo transparente",
-  email: "contacto@acajete.gob.mx",      // TODO: correo oficial
-  phone: "(000) 000-0000",                // TODO: teléfono oficial
-  address: "Palacio Municipal, Centro, Acajete, Veracruz, México", // TODO
-  facebook: "#",                          // TODO
-  instagram: "#",                         // TODO
+  email: "hayuntamientodeacajeteveracruz@gmail.com",
+  phone: "228 318 1096",
+  whatsapp: "2311089253", // Número que recibe los mensajes del formulario
+  address: "Palacio Municipal, Centro, Acajete, Veracruz, México",
+  facebook: "https://www.facebook.com/profile.php?id=61585844913895",
+  instagram: "#", // sin Instagram por ahora
+  horario: {
+    semana: "Lunes a viernes · 9:00 a 16:00 hrs",
+    sabado: "Sábados · 9:00 a 13:00 hrs",
+  },
 };
 
 // ======== NAVEGACIÓN PRINCIPAL ========
@@ -386,3 +391,36 @@ export const leyesTransparencia = [
     enlace: "#",
   },
 ];
+
+// ======== AVISO DE PRIVACIDAD ========
+export const avisoPrivacidad = {
+  responsable: "H. Ayuntamiento de Acajete, Veracruz",
+  domicilio: "Palacio Municipal, Centro, Acajete, Veracruz, México",
+  ultimaActualizacion: "Enero 2026",
+  secciones: [
+    {
+      titulo: "Identidad y domicilio del responsable",
+      contenido: "El H. Ayuntamiento de Acajete, Veracruz, con domicilio en el Palacio Municipal ubicado en el centro del municipio, es el responsable del uso y protección de los datos personales que los ciudadanos proporcionan para la realización de trámites y servicios.",
+    },
+    {
+      titulo: "Datos personales que se recaban",
+      contenido: "Para los fines señalados en el presente aviso de privacidad, se podrán recabar datos personales como: nombre completo, CURP, domicilio, teléfono, correo electrónico, identificación oficial, así como datos relacionados con el trámite específico que se solicita ante las diferentes áreas del H. Ayuntamiento.",
+    },
+    {
+      titulo: "Finalidades del tratamiento",
+      contenido: "Los datos personales recabados serán utilizados únicamente para la prestación de trámites y servicios municipales, la integración de expedientes, la emisión de documentos oficiales, el contacto con el ciudadano y el cumplimiento de obligaciones legales y fiscales del municipio.",
+    },
+    {
+      titulo: "Transferencia de datos",
+      contenido: "Los datos personales no serán transferidos ni compartidos con terceros sin el consentimiento expreso del titular, salvo en los casos previstos por la legislación aplicable en materia de transparencia, acceso a la información pública y protección de datos personales.",
+    },
+    {
+      titulo: "Derechos ARCO",
+      contenido: "El titular de los datos personales tiene derecho a acceder, rectificar, cancelar u oponerse al tratamiento de sus datos (derechos ARCO), así como a revocar el consentimiento otorgado. Para ejercer estos derechos, podrá acudir a la Unidad de Transparencia del H. Ayuntamiento o enviar su solicitud por los medios de contacto oficiales.",
+    },
+    {
+      titulo: "Modificaciones al aviso",
+      contenido: "El presente aviso de privacidad puede ser actualizado en cualquier momento conforme a las reformas legislativas o necesidades institucionales. Las modificaciones serán publicadas en el sitio oficial del H. Ayuntamiento.",
+    },
+  ],
+};

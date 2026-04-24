@@ -43,9 +43,9 @@
   --color-cream: #f8f5ee;
   --color-ink: #1a1a1a;
 
-  /* Tipografías */
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-sans: 'Inter', system-ui, sans-serif;
+ /* Tipografías */
+  --font-display: 'Montserrat', system-ui, sans-serif;
+  --font-sans: 'Montserrat', system-ui, sans-serif;
 
   /* Animaciones personalizadas */
   --animate-fade-in: fadeIn 0.6s ease-out forwards;
@@ -101,4 +101,10 @@ body {
 ::selection {
   background-color: var(--color-accent-500);
   color: white;
+}
+
+/* Compatibilidad con archivos existentes (Playfair → Montserrat) */
+:root {
+  --font-playfair: 'Montserrat', system-ui, sans-serif;
+  --font-inter: 'Montserrat', system-ui, sans-serif;
 }
