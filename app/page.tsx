@@ -69,6 +69,27 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ============ CONVOCATORIA ============ */}
+      <section className="py-16 bg-brand-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-xs uppercase tracking-[0.3em] text-accent-600 font-semibold mb-4">
+            Aviso oficial
+          </p>
+          <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl text-brand-900 font-bold mb-8">
+            Convocatoria
+          </h2>
+          <div className="relative inline-block shadow-2xl rounded-sm overflow-hidden">
+            <Image
+              src="/images/convocatoria.jpeg"
+              alt="Convocatoria oficial del H. Ayuntamiento de Acajete"
+              width={800}
+              height={1100}
+              className="w-full max-w-2xl mx-auto object-contain"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* ============ MENSAJE INSTITUCIONAL ============ */}
       <section className="py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
