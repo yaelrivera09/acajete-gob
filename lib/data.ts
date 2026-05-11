@@ -57,21 +57,23 @@ export const cabildo = [
 
 // ======== DIRECTORES DE ÁREA ========
 export const directores = [
-  { area: "DIF Municipal", titular: "Directora del DIF Municipal", nombre: "C. Amairani Hernández Parra" },
-  { area: "Contraloría Interna", titular: "Contralor Interno", nombre: "L.C. Levit Hernández Jiménez" },
-  { area: "Tesorería Municipal", titular: "Tesorera Municipal", nombre: "L.C. Mariela Cortes Hernández" },
-  { area: "Instituto Municipal de las Mujeres", titular: "Directora", nombre: "C. Diana Laura Hernández Suárez" },
-  { area: "Dirección Jurídica", titular: "Director Jurídico", nombre: "Lic. David Gustavo Grau González" },
-  { area: "Catastro", titular: "Director de Catastro", nombre: "C. José Manuel Hernández Hernández" },
-  { area: "Protección Civil", titular: "Director de Protección Civil", nombre: "Ing. Paulo César Hernández Rodríguez" },
-  { area: "Seguridad Pública", titular: "Director de Seguridad Pública", nombre: "Lic. Cristóbal González Vizcarra" },
-  { area: "Registro Civil", titular: "Director de Registro Civil", nombre: "Lic. Gustavo Miguel Armenta Luna" },
-  { area: "Obras Públicas", titular: "Director de Obras Públicas", nombre: "Ing. Esteban Cutberto Alarcón Hernández" },
-  { area: "Archivo y Biblioteca", titular: "Director", nombre: "Lic. Jorge Luis Castro Hernández" },
-  { area: "Desarrollo Urbano", titular: "Director de Desarrollo Urbano", nombre: "Ing. Carlos Adrián Miranda Melchor" },
-  { area: "Oficialía Mayor", titular: "Oficial Mayor", nombre: "Juan Jorge Ortega Morales" },
-  { area: "Transparencia", titular: "Titular de Transparencia", nombre: "Lic. Blanca Estela Carmona García" },
-  { area: "Fomento Deportivo", titular: "Director de Fomento Deportivo", nombre: "Óscar García Falfán" },
+  { area: "DIF Municipal", titular: "Directora del DIF Municipal", nombre: "C. Amairani Hernández Parra", imagen: "/images/directores/dif.jpg" },
+  { area: "Contraloría Interna", titular: "Contralor Interno", nombre: "L.C. Levit Hernández Jiménez", imagen: "/images/directores/contraloria.jpg" },
+  { area: "Tesorería Municipal", titular: "Tesorera Municipal", nombre: "L.C. Mariela Cortes Hernández", imagen: null },
+  { area: "Instituto Municipal de las Mujeres", titular: "Directora", nombre: "C. Diana Laura Hernández Suárez", imagen: "/images/directores/imm.jpg" },
+  { area: "Dirección Jurídica", titular: "Director Jurídico", nombre: "Lic. David Gustavo Grau González", imagen: "/images/directores/juridico.jpg" },
+  { area: "Catastro", titular: "Director de Catastro", nombre: "C. José Manuel Hernández Hernández", imagen: "/images/directores/catastro.jpg" },
+  { area: "Protección Civil", titular: "Director de Protección Civil", nombre: "Ing. Paulo César Hernández Rodríguez", imagen: "/images/directores/proteccion-civil.jpg" },
+  { area: "Seguridad Pública", titular: "Director de Seguridad Pública", nombre: "Lic. Cristóbal González Vizcarra", imagen: null },
+  { area: "Registro Civil", titular: "Director de Registro Civil", nombre: "Lic. Gustavo Miguel Armenta Luna", imagen: "/images/directores/registro-civil.jpg" },
+  { area: "Obras Públicas", titular: "Director de Obras Públicas", nombre: "Ing. Esteban Cutberto Alarcón Hernández", imagen: "/images/directores/obras-publicas.jpg" },
+  { area: "Archivo y Biblioteca", titular: "Director", nombre: "Lic. Jorge Luis Castro Hernández", imagen: "/images/directores/archivo.jpg" },
+  { area: "Desarrollo Urbano", titular: "Director de Desarrollo Urbano", nombre: "Ing. Carlos Adrián Miranda Melchor", imagen: "/images/directores/desarrollo-urbano.jpg" },
+  { area: "Oficialía Mayor", titular: "Oficial Mayor", nombre: "Juan Jorge Ortega Morales", imagen: "/images/directores/oficialía.jpg" },
+  { area: "Transparencia", titular: "Titular de Transparencia", nombre: "Lic. Blanca Estela Carmona García", imagen: "/images/directores/transparencia.jpg" },
+  { area: "Fomento Deportivo", titular: "Director de Fomento Deportivo", nombre: "Óscar García Falfán", imagen: "/images/directores/deportivo.jpg" },
+  { area: "Fomento Agropecuario", titular: "Director de Fomento Agropecuario", nombre: "C. Rubén Alarcón Martínez", imagen: "/images/directores/agropecuario.jpg" },
+  { area: "Parques y Jardines", titular: "Director de Parques y Jardines", nombre: "C. Alejandro Martínez García", imagen: "/images/directores/parques.jpg" },
 ];
 
 // ======== TRÁMITES DE REGISTRO CIVIL ========

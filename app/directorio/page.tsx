@@ -1,6 +1,7 @@
 import PageHeader from "@/components/PageHeader";
 import { directores, cabildo, siteConfig } from "@/lib/data";
-import { Briefcase, Mail, Phone } from "lucide-react";
+import Image from "next/image";
+import { Briefcase, Mail, Phone, UserCircle } from "lucide-react";
 
 export const metadata = {
     title: "Directorio | H. Ayuntamiento de Acajete",
@@ -11,27 +12,42 @@ type Director = {
     area: string;
     titular: string;
     nombre: string;
+    imagen: string | null;
 };
 
-function DirectorRow({ director }: { director: Director }) {
+function DirectorCard({ director }: { director: Director }) {
     return (
-        <div className="p-5 hover:bg-brand-50 transition">
-            <p className="text-[10px] uppercase tracking-[0.2em] text-accent-600 font-semibold mb-1">
-                {director.area}
-            </p>
-            <p className="font-[family-name:var(--font-playfair)] text-base text-brand-900 font-bold leading-tight mb-0.5">
-                {director.nombre}
-            </p>
-            <p className="text-xs text-brand-600">{director.titular}</p>
+        <div className="bg-white rounded-sm shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border-t-4 border-brand-700 hover:border-accent-500 group">
+            <div className="relative h-52 bg-brand-100 overflow-hidden">
+                {director.imagen ? (
+                    <Image
+                        src={director.imagen}
+                        alt={director.nombre}
+                        fill
+                        className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    />
+                ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                        <UserCircle className="text-brand-300" size={72} />
+                    </div>
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-900/60 via-transparent to-transparent" />
+            </div>
+            <div className="p-5">
+                <p className="text-[10px] uppercase tracking-[0.2em] text-accent-600 font-semibold mb-1">
+                    {director.area}
+                </p>
+                <p className="font-[family-name:var(--font-playfair)] text-base text-brand-900 font-bold leading-tight mb-0.5">
+                    {director.nombre}
+                </p>
+                <p className="text-xs text-brand-600">{director.titular}</p>
+            </div>
         </div>
     );
 }
 
 export default function DirectorioPage() {
-    const mitad = Math.ceil(directores.length / 2);
-    const columnaIzq = directores.slice(0, mitad);
-    const columnaDer = directores.slice(mitad);
-
     return (
         <>
             <PageHeader
@@ -81,19 +97,10 @@ export default function DirectorioPage() {
                         </h2>
                     </div>
 
-                    <div className="bg-white rounded-sm shadow-md overflow-hidden">
-                        <div className="grid grid-cols-1 md:grid-cols-2">
-                            <div className="divide-y divide-brand-100">
-                                {columnaIzq.map((dir, idx) => (
-                                    <DirectorRow key={`izq-${idx}`} director={dir} />
-                                ))}
-                            </div>
-                            <div className="divide-y divide-brand-100 md:border-l border-brand-100">
-                                {columnaDer.map((dir, idx) => (
-                                    <DirectorRow key={`der-${idx}`} director={dir} />
-                                ))}
-                            </div>
-                        </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+                        {directores.map((dir, idx) => (
+                            <DirectorCard key={idx} director={dir} />
+                        ))}
                     </div>
                 </div>
             </section>
