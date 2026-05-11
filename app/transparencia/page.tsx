@@ -1,5 +1,6 @@
 import PageHeader from "@/components/PageHeader";
 import { leyesTransparencia } from "@/lib/data";
+import EstadosFinancieros from "@/components/EstadosFinancieros";
 import { Scale, FileText, ExternalLink, ShieldCheck } from "lucide-react";
 
 export const metadata = {
@@ -19,6 +20,7 @@ export default function TransparenciaPage() {
 
       <SeccionIntro />
       <SeccionLeyes />
+      <EstadosFinancieros />
       <SeccionCompromiso />
     </>
   );
