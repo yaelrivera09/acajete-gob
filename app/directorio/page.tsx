@@ -73,15 +73,32 @@ export default function DirectorioPage() {
                         </h2>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
                         {cabildo.map((persona, idx) => (
-                            <div key={idx} className="bg-white p-5 rounded-sm shadow-sm hover:shadow-md transition border-l-4 border-accent-500">
-                                <p className="text-[10px] uppercase tracking-[0.15em] text-accent-600 font-semibold mb-1">
-                                    {persona.cargo}
-                                </p>
-                                <p className="font-[family-name:var(--font-playfair)] text-base text-brand-900 font-bold leading-tight">
-                                    {persona.nombre}
-                                </p>
+                            <div key={idx} className="bg-white rounded-sm shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border-t-4 border-accent-500 group">
+                                <div className="relative h-52 bg-brand-100 overflow-hidden">
+                                    {persona.imagen ? (
+                                        <Image
+                                            src={persona.imagen}
+                                            alt={persona.nombre}
+                                            fill
+                                            className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                                        />
+                                    ) : (
+                                        <div className="absolute inset-0 flex items-center justify-center">
+                                            <UserCircle className="text-brand-300" size={72} />
+                                        </div>
+                                    )}
+                                </div>
+                                <div className="p-5">
+                                    <p className="text-[10px] uppercase tracking-[0.15em] text-accent-600 font-semibold mb-1">
+                                        {persona.cargo}
+                                    </p>
+                                    <p className="font-[family-name:var(--font-playfair)] text-base text-brand-900 font-bold leading-tight">
+                                        {persona.nombre}
+                                    </p>
+                                </div>
                             </div>
                         ))}
                     </div>
