@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 // Cambia a false para reactivar el sitio completo
-const HOLDING_MODE = true;
+const HOLDING_MODE = false;
 
 export function middleware(request: NextRequest) {
   if (!HOLDING_MODE) return NextResponse.next();

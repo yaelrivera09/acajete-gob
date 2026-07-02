@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "./globals.css";
 import ScrollToTop from "@/components/ScrollToTop";
+import HoldingOverlay from "@/components/HoldingOverlay";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -25,6 +26,7 @@ export default function RootLayout({
   return (
     <html lang="es" className={montserrat.variable}>
       <body className="min-h-screen flex flex-col">
+        <HoldingOverlay />
         <Header />
         <main className="flex-1">{children}</main>
         <ScrollToTop />
