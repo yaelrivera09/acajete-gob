@@ -7,8 +7,8 @@ export default function HoldingOverlay() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    // Siempre muestra el overlay al cargar la página
-    setVisible(true);
+    const cerrado = sessionStorage.getItem("holding-cerrado");
+    if (!cerrado) setVisible(true);
   }, []);
 
   if (!visible) return null;
@@ -18,7 +18,10 @@ export default function HoldingOverlay() {
 
       {/* Botón cerrar */}
       <button
-        onClick={() => setVisible(false)}
+        onClick={() => {
+          sessionStorage.setItem("holding-cerrado", "1");
+          setVisible(false);
+        }}
         className="absolute top-5 right-5 flex items-center gap-2 text-white/40 hover:text-white transition-colors duration-200 group"
         aria-label="Ver sitio web"
       >
