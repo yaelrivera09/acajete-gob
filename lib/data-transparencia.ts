@@ -165,3 +165,107 @@ export const estadosFinancierosT1_2026 = {
     ] as MesLDF[],
   },
 };
+
+const BASE_T2 = "/docs/transparencia/2026/t2/junio/PDF";
+
+const archivosAdicionalJunio = [
+  "09_ Estado de Deuda Pública Mensual.pdf",
+  "17_ Formato de Aplicación de los Recursos del FAISMUN 2026.pdf",
+  "18_ Formato de Aplicación de los Recursos del FORTAMUN_DF 2026.pdf",
+  "19_ Programas con Recursos Concurrente por Orden de Gobierno.pdf",
+  "20_ Ejercicio y Destino de Ingresos Extraordinarios por Convenios federales.pdf",
+  "21_ Montos Pagados por Ayudas y Subsidios.pdf",
+  "22_ Relación de Cuentas Bancarias Productivas Especificas.pdf",
+  "23_ Conciliación Entre los Ingresos Presupuestarios y Contables.pdf",
+  "24_ Conciliación Entre los Egresos Presupuestarios y Contables.pdf",
+];
+
+const nombresAdicionalJunio = [
+  "Estado de Deuda Pública Mensual",
+  "Aplicación de Recursos FAISMUN 2026",
+  "Aplicación de Recursos FORTAMUN-DF 2026",
+  "Programas con Recursos Concurrentes por Orden de Gobierno",
+  "Ingresos Extraordinarios por Convenios Federales",
+  "Montos Pagados por Ayudas y Subsidios",
+  "Cuentas Bancarias Productivas Específicas",
+  "Conciliación de Ingresos Presupuestarios y Contables",
+  "Conciliación de Egresos Presupuestarios y Contables",
+];
+
+const archivosLDFJunio = [
+  "1_ EstadoSituacionFinancieraDetallado.pdf",
+  "2_ BalancePresupuestario.pdf",
+  "3_ EstadoAnaliticoIngresosDetallado.pdf",
+  "4_ Presupuesto de Egresos Detallado_Objeto del Gasto LDF.pdf",
+  "5_ Presupuesto de Egresos Detallado_Clasif Administrativa LDF.pdf",
+  "6_ Presupuesto de Egresos Detallado_Clasif Funcional LDF.pdf",
+  "7_ Clasificación de Servicios Personales por Categoria LDF.pdf",
+  "8_DeudaLDF.pdf",
+  "9_InformeAnaliticoDeObligacionesDiferentesDeFinanciamiento.pdf",
+  "Informe sobre estudios actuariales LDF.pdf",
+];
+
+const nombresLDFJunio = [
+  "Estado de Situación Financiera Detallado",
+  "Balance Presupuestario",
+  "Estado Analítico de Ingresos Detallado",
+  "Presupuesto de Egresos Detallado: Objeto del Gasto",
+  "Presupuesto de Egresos Detallado: Clasificación Administrativa",
+  "Presupuesto de Egresos Detallado: Clasificación Funcional",
+  "Servicios Personales por Categoría",
+  "Informe Analítico de la Deuda y Otros Pasivos",
+  "Informe de Obligaciones Diferentes de Financiamiento",
+  "Informe sobre Estudios Actuariales",
+];
+
+function docsT2(carpeta: string, archivos: string[], nombres: string[]) {
+  return archivos.map((archivo, i) => ({
+    nombre: nombres[i],
+    href: `${BASE_T2}/${e(carpeta)}/${e(archivo)}`,
+  }));
+}
+
+export const estadosFinancierosT2_2026 = {
+  periodo: "Segundo Trimestre 2026",
+  lgcg: {
+    id: "lgcg",
+    nombre: "Ley General de Contabilidad Gubernamental",
+    siglas: "LGCG",
+    meses: [
+      {
+        id: "junio",
+        nombre: "Junio 2026",
+        categorias: [
+          {
+            nombre: "I. Contables",
+            documentos: docsT2("I. Contables", archivosContablesMarzo, nombresContables),
+          },
+          {
+            nombre: "II. Presupuestales",
+            documentos: docsT2("II. Presupuestales", archivosPresupuestales, nombresPresupuestales),
+          },
+          {
+            nombre: "III. Programático",
+            documentos: docsT2("III. Programatico", ["Gasto Categoria Programatica.pdf"], ["Gasto por Categoría Programática"]),
+          },
+          {
+            nombre: "IV. Adicional",
+            documentos: docsT2("IV. Adicional", archivosAdicionalJunio, nombresAdicionalJunio),
+          },
+        ],
+      },
+    ] as MesLGCG[],
+  },
+  ldf: {
+    id: "ldf",
+    nombre: "Ley de Disciplina Financiera",
+    siglas: "LDF",
+    meses: [
+      {
+        id: "junio",
+        nombre: "Junio 2026",
+        documentos: docsT2("V. Disciplina Financiera", archivosLDFJunio, nombresLDFJunio),
+      },
+    ] as MesLDF[],
+  },
+};
