@@ -4,8 +4,10 @@ import { useState } from "react";
 import { ChevronDown, FileText, Download } from "lucide-react";
 import { estadosFinancierosT1_2026, type Categoria, type Documento } from "@/lib/data-transparencia";
 
-export default function EstadosFinancieros() {
-  const { lgcg, ldf, periodo } = estadosFinancierosT1_2026;
+type Datos = typeof estadosFinancierosT1_2026;
+
+export default function EstadosFinancieros({ datos = estadosFinancierosT1_2026 }: { datos?: Datos }) {
+  const { lgcg, ldf, periodo } = datos;
 
   return (
     <section className="pb-20">
