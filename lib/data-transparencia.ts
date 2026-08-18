@@ -129,6 +129,109 @@ export type Categoria = { nombre: string; documentos: Documento[] };
 export type MesLGCG = { id: string; nombre: string; categorias: Categoria[] };
 export type MesLDF = { id: string; nombre: string; documentos: Documento[] };
 
+// Marzo se publica con el paquete completo entregado por Tesorería, que
+// incluye anexos bancarios ausentes en enero y febrero.
+const BASE_MARZO = "/docs/transparencia/2026/t1/marzo/PDF";
+
+function docsMarzo(carpeta: string, entradas: [string, string][]) {
+  const ruta = carpeta.split("/").map(e).join("/");
+  return entradas.map(([archivo, nombre]) => ({
+    nombre,
+    href: `${BASE_MARZO}/${ruta}/${e(archivo)}`,
+  }));
+}
+
+const marzoAdicional: [string, string][] = [
+  ["0_ Oficio de Remisión.pdf", "Oficio de Remisión"],
+  ["01_ Acta de Sesión.pdf", "Acta de Sesión"],
+  ["02_ Balanza de Comprobación.pdf", "Balanza de Comprobación"],
+  ["03_ Conciliaciones Bancarias.pdf", "Conciliaciones Bancarias"],
+  ["04_ Informe de Altas y Bajas de Personal.pdf", "Informe de Altas y Bajas de Personal"],
+  ["05_ Informe de Altas de Bienes Muebles.pdf", "Informe de Altas de Bienes Muebles"],
+  ["06_ Informe de Bajas de Bienes Muebles.pdf", "Informe de Bajas de Bienes Muebles"],
+  ["07_ Informe de Altas de Bienes Inmuebles.pdf", "Informe de Altas de Bienes Inmuebles"],
+  ["08_ Informe de Bajas de Bienes Inmuebles.pdf", "Informe de Bajas de Bienes Inmuebles"],
+  ["09_ Estado de Deuda Pública Mensual.pdf", "Estado de Deuda Pública Mensual"],
+  ["10_ Notificación de Depósito de Participaciones Federales.pdf", "Notificación de Depósito de Participaciones Federales"],
+  ["11_ Notificación de Depósito de Aportaciones Federales.pdf", "Notificación de Depósito de Aportaciones Federales"],
+  ["12_ Reporte de Recaudación Predial.pdf", "Reporte de Recaudación Predial"],
+  ["13_ Reporte de Recaudación Traslado de Dominio.pdf", "Reporte de Recaudación por Traslado de Dominio"],
+  ["13_ Reporte de Recaudación de los Derechos por servicio Agua.pdf", "Reporte de Recaudación de Derechos por Servicio de Agua"],
+  ["14_ Relación de Donaciones Recibidas.pdf", "Relación de Donaciones Recibidas"],
+  ["15_ Corte de Caja Mensual.pdf", "Corte de Caja Mensual"],
+  ["16_ Formato de Aplicación de los Recursos del FAISMUN 2026.pdf", "Aplicación de Recursos FAISMUN 2026"],
+  ["17_ Formato de Aplicación de los Recursos del FORTAMUN_DF 2026.pdf", "Aplicación de Recursos FORTAMUN-DF 2026"],
+  ["18_ Programas con Recursos Concurrente por Orden de Gobierno.pdf", "Programas con Recursos Concurrentes por Orden de Gobierno"],
+  ["19_ Ejercicio y Destino de Ingresos Extraordinarios por Convenio.pdf", "Ingresos Extraordinarios por Convenio"],
+  ["20_ Montos Pagados por Ayudas y Subsidios.pdf", "Montos Pagados por Ayudas y Subsidios"],
+  ["21_ Relación de Cuentas Bancarias Productivas Especificas.pdf", "Cuentas Bancarias Productivas Específicas"],
+  ["22_ Conciliación Entre los Ingresos Presupuestarios y Contables.pdf", "Conciliación de Ingresos Presupuestarios y Contables"],
+  ["23_ Conciliación Entre los Egresos Presupuestarios y Contables.pdf", "Conciliación de Egresos Presupuestarios y Contables"],
+  ["24_ Listado de Adjudicaciones y Licitaciones.pdf", "Listado de Adjudicaciones y Licitaciones"],
+  ["25_ Relación de Bienes que Componen el Patrimonio.pdf", "Relación de Bienes que Componen el Patrimonio"],
+  ["27_ Notificación de Participaciones y Aportaciones Federales.pdf", "Notificación de Participaciones y Aportaciones Federales"],
+  ["29_ Relación de Cheques en Transito y Depositos Pendientes.pdf", "Relación de Cheques en Tránsito y Depósitos Pendientes"],
+  ["30_Contratación de Financiamentos u Obligaciones.pdf", "Contratación de Financiamientos u Obligaciones"],
+  ["31_ Acta de Baja de bienes muebles.pdf", "Acta de Baja de Bienes Muebles"],
+  ["32_Disposiciones de Contratación Emitidas por el Comite de Obras.pdf", "Disposiciones de Contratación del Comité de Obras"],
+  ["33_Reporte de Nomina del Periodo Marzo 2026.pdf", "Reporte de Nómina de Marzo 2026"],
+  ["i_ Estados de Cuenta.pdf", "Estados de Cuenta"],
+  ["ii_ Auxiliares bancarios.pdf", "Auxiliares Bancarios"],
+  ["iii_ Cheques en Tránsito.pdf", "Cheques en Tránsito"],
+  ["iv_ Depósitos Pendientes por Registrar por el Banco.pdf", "Depósitos Pendientes por Registrar por el Banco"],
+];
+
+const cuentas = ["1.1.1.2.02.67", "1.1.1.2.02.68", "1.1.1.2.02.69", "1.1.1.2.02.70", "1.1.1.2.05.03", "1.1.1.2.05.04", "1.1.1.2.05.05", "1.1.1.2.05.06"];
+
+const marzoEstadosDeCuenta: [string, string][] = [
+  ["BBVA INGRESOS PROPIOS 2025 1.1.1.2.02.67.pdf", "BBVA Ingresos Propios 2025 · 1.1.1.2.02.67"],
+  ["BBVA PARTICIPACIONES 2025 1.1.1.2.02.68.pdf", "BBVA Participaciones 2025 · 1.1.1.2.02.68"],
+  ["BBVA FAISMUN 2025 1.1.1.2.02.69.pdf", "BBVA FAISMUN 2025 · 1.1.1.2.02.69"],
+  ["BBVA FORTAMUN-DF 2025 1.1.1.2.02.70.pdf", "BBVA FORTAMUN-DF 2025 · 1.1.1.2.02.70"],
+  ["EF35 EDO DE CUENTA 1.1.1.2.05.03.pdf", "Estado de Cuenta FAISMUN 2026 · 1.1.1.2.05.03"],
+  ["EF35 EDO DE CUENTA 1.1.1.2.05.04.pdf", "Estado de Cuenta FORTAMUN-DF 2026 · 1.1.1.2.05.04"],
+  ["EF35 EDO DE CUENTA 1.1.1.2.05.05.pdf", "Estado de Cuenta Participaciones 2026 · 1.1.1.2.05.05"],
+  ["EF35 EDO DE CUENTA 1.1.1.2.05.06.pdf", "Estado de Cuenta Ingresos Fiscales 2026 · 1.1.1.2.05.06"],
+];
+
+const marzoLDF: [string, string][] = [
+  ["1_ EstadoSituacionFinancieraDetallado.pdf", "Estado de Situación Financiera Detallado"],
+  ["2_ BalancePresupuestario.pdf", "Balance Presupuestario"],
+  ["3_ EstadoAnaliticoIngresosDetallado.pdf", "Estado Analítico de Ingresos Detallado"],
+  ["4_ Presupuesto de Egresos Detallado_Objeto del Gasto LDF.pdf", "Presupuesto de Egresos Detallado: Objeto del Gasto"],
+  ["5_ Presupuesto de Egresos Detallado_Clasif Administrativa LDF.pdf", "Presupuesto de Egresos Detallado: Clasificación Administrativa"],
+  ["6_ Presupuesto de Egresos Detallado_Clasif Funcional LDF.pdf", "Presupuesto de Egresos Detallado: Clasificación Funcional"],
+  ["7_ Clasificación de Servicios Personales por Categoria LDF.pdf", "Servicios Personales por Categoría"],
+  ["8_DeudaLDF.pdf", "Informe Analítico de la Deuda y Otros Pasivos"],
+  ["9_InformeAnaliticoDeObligacionesDiferentesDeFinanciamiento.pdf", "Informe de Obligaciones Diferentes de Financiamiento"],
+  ["10_Reporte de Traspaso Entre Bancos.pdf", "Reporte de Traspaso Entre Bancos"],
+];
+
+const categoriasMarzo: Categoria[] = [
+  {
+    nombre: "I. Contables",
+    documentos: docsMarzo("I. Contables", archivosContablesMarzo.map((a, i) => [a, nombresContables[i]])),
+  },
+  {
+    nombre: "II. Presupuestales",
+    documentos: docsMarzo("II. Presupuestales", archivosPresupuestales.map((a, i) => [a, nombresPresupuestales[i]])),
+  },
+  {
+    nombre: "III. Programático",
+    documentos: docsMarzo("III. Programatico", [["Gasto Categoria Programatica.pdf", "Gasto por Categoría Programática"]]),
+  },
+  { nombre: "IV. Adicional", documentos: docsMarzo("IV. Adicional", marzoAdicional) },
+  {
+    nombre: "V. Auxiliares Bancarios",
+    documentos: docsMarzo("IV. Adicional/Auxiliares Bancarios", cuentas.map((c) => [`Auxiliar ${c}.pdf`, `Auxiliar ${c}`])),
+  },
+  {
+    nombre: "VI. Conciliaciones Bancarias",
+    documentos: docsMarzo("IV. Adicional/Conciliaciones Bancarias", cuentas.map((c) => [`Conciliación Bancaria ${c}.pdf`, `Conciliación Bancaria ${c}`])),
+  },
+  { nombre: "VII. Estados de Cuenta", documentos: docsMarzo("IV. Adicional/ESTADOS DE CUENTA", marzoEstadosDeCuenta) },
+];
+
 export const estadosFinancierosT1_2026 = {
   periodo: "Primer Trimestre 2026",
   lgcg: {
@@ -138,7 +241,7 @@ export const estadosFinancierosT1_2026 = {
     meses: [
       { id: "enero", nombre: "Enero 2026", categorias: categoriasLGCG("enero", archivosContablesEneroFeb) },
       { id: "febrero", nombre: "Febrero 2026", categorias: categoriasLGCG("febrero", archivosContablesEneroFeb) },
-      { id: "marzo", nombre: "Marzo 2026", categorias: categoriasLGCG("marzo", archivosContablesMarzo) },
+      { id: "marzo", nombre: "Marzo 2026", categorias: categoriasMarzo },
     ] as MesLGCG[],
   },
   ldf: {
@@ -149,18 +252,7 @@ export const estadosFinancierosT1_2026 = {
       {
         id: "marzo",
         nombre: "Marzo 2026",
-        documentos: [
-          { nombre: "Estado de Situación Financiera Detallado", href: `${BASE}/ldf/marzo/${e("1_ EstadoSituacionFinancieraDetallado.pdf")}` },
-          { nombre: "Balance Presupuestario", href: `${BASE}/ldf/marzo/${e("2_ BalancePresupuestario.pdf")}` },
-          { nombre: "Estado Analítico de Ingresos Detallado", href: `${BASE}/ldf/marzo/${e("3_ EstadoAnaliticoIngresosDetallado.pdf")}` },
-          { nombre: "Presupuesto de Egresos Detallado: Objeto del Gasto", href: `${BASE}/ldf/marzo/${e("4_ Presupuesto de Egresos Detallado_Objeto del Gasto LDF.pdf")}` },
-          { nombre: "Presupuesto de Egresos Detallado: Clasificación Administrativa", href: `${BASE}/ldf/marzo/${e("5_ Presupuesto de Egresos Detallado_Clasif Administrativa LDF.pdf")}` },
-          { nombre: "Presupuesto de Egresos Detallado: Clasificación Funcional", href: `${BASE}/ldf/marzo/${e("6_ Presupuesto de Egresos Detallado_Clasif Funcional LDF.pdf")}` },
-          { nombre: "Servicios Personales por Categoría", href: `${BASE}/ldf/marzo/${e("7_ Clasificación de Servicios Personales por Categoria LDF.pdf")}` },
-          { nombre: "Informe Analítico de la Deuda y Otros Pasivos", href: `${BASE}/ldf/marzo/${e("8_Informe Analitico de la Deuda y Otros Pasivos-LDF.pdf")}` },
-          { nombre: "Informe de Obligaciones Diferentes de Financiamiento", href: `${BASE}/ldf/marzo/${e("9_InformeAnaliticoDeObligacionesDiferentesDeFinanciamiento.pdf")}` },
-          { nombre: "Reporte de Traspaso Entre Bancos", href: `${BASE}/ldf/marzo/${e("10_Reporte de Traspaso Entre Bancos.pdf")}` },
-        ],
+        documentos: docsMarzo("V. Disciplina Financiera", marzoLDF),
       },
     ] as MesLDF[],
   },
