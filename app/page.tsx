@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FileText, Users, Eye, Phone, ArrowRight, MapPin } from "lucide-react";
+import { FileText, Users, Eye, Phone, ArrowRight, MapPin, Download } from "lucide-react";
 import HeroCarousel from "@/components/HeroCarousel";
 
 // Accesos rápidos que aparecen debajo del hero
@@ -75,17 +75,41 @@ export default function Home() {
           <p className="text-xs uppercase tracking-[0.3em] text-accent-600 font-semibold mb-4">
             Aviso oficial
           </p>
-          <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl text-brand-900 font-bold mb-8">
+          <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl text-brand-900 font-bold mb-3">
             Convocatoria
           </h2>
-          <div className="relative inline-block shadow-2xl rounded-sm overflow-hidden">
+          <p className="text-brand-700 mb-8 max-w-2xl mx-auto">
+            XXI Concurso Nacional Transparencia en Corto 2026 &mdash;{" "}
+            <span className="italic">&quot;Desinformación: Riesgos de la IA&quot;</span>. Dirigido a
+            jóvenes de 15 a 25 años. Recepción de trabajos hasta el 9 de septiembre de 2026.
+          </p>
+
+          <a
+            href="/docs/convocatorias/convocatoria-cntc-2026.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative inline-block shadow-2xl rounded-sm overflow-hidden max-w-2xl mx-auto"
+            aria-label="Ver la convocatoria completa en PDF"
+          >
             <Image
-              src="/images/convocatoria.jpeg"
-              alt="Convocatoria oficial del H. Ayuntamiento de Acajete"
-              width={800}
-              height={1100}
-              className="w-full max-w-2xl mx-auto object-contain"
+              src="/images/convocatoria-cntc-2026.jpg"
+              alt="Convocatoria del XXI Concurso Nacional Transparencia en Corto 2026"
+              width={1400}
+              height={2164}
+              className="w-full h-auto object-contain"
             />
+            <span className="absolute inset-0 bg-brand-900/0 group-hover:bg-brand-900/10 transition-colors duration-300" />
+          </a>
+
+          <div className="mt-8">
+            <a
+              href="/docs/convocatorias/convocatoria-cntc-2026.pdf"
+              download
+              className="inline-flex items-center gap-2.5 bg-accent-500 hover:bg-accent-600 text-white font-semibold px-7 py-3.5 rounded-sm transition-colors duration-200 text-sm uppercase tracking-wider shadow-lg"
+            >
+              <Download size={17} />
+              Descargar convocatoria (PDF)
+            </a>
           </div>
         </div>
       </section>
