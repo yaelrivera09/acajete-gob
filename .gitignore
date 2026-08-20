@@ -47,3 +47,7 @@ node_modules
 .env.local
 .DS_Store
 out
+# archivos de trabajo locales (no forman parte del sitio publicado)
+/Drive Acajete/
+/Primer Trimestre 2026/
+/Informacion web Acajete.docx
