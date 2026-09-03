@@ -258,7 +258,51 @@ export const estadosFinancierosT1_2026 = {
   },
 };
 
-const BASE_T2 = "/docs/transparencia/2026/t2/junio/PDF";
+const BASE_T2 = "/docs/transparencia/2026/t2";
+
+function docsT2(mes: string, carpeta: string, archivos: string[], nombres: string[]) {
+  return archivos.map((archivo, i) => ({
+    nombre: nombres[i],
+    href: `${BASE_T2}/${mes}/PDF/${e(carpeta)}/${e(archivo)}`,
+  }));
+}
+
+// Abril llega de TesorerÃ­a con nombres de archivo propios (acentos y
+// espacios distintos al resto de los meses), por lo que lleva su lista.
+const archivosContablesAbril = [
+  "01_ Estado de Actividades.pdf",
+  "02_ Estado de Situacion Financiera.pdf",
+  "03_ Estado de Variacion en la Hacienda Publica.pdf",
+  "04_ Estado de Cambios en la Situación Financiera.pdf",
+  "05_ Estado de Flujos de Efectivo.pdf",
+  "06_ Informe de Pasivos Contigentes.pdf",
+  "07_ Notas a los Estados Financieros.pdf",
+  "08_ Estado Analitico del Activo.pdf",
+  "09_ Estado Analitico de la Deuda y  Otros Pasivos.pdf",
+];
+
+// Abril y mayo comparten la estructura mensual de enero y febrero: no
+// incluyen Disciplina Financiera, que solo se publica al cierre del trimestre.
+function categoriasT2Mensual(mes: string, contables: string[], programatico: string): Categoria[] {
+  return [
+    {
+      nombre: "I. Contables",
+      documentos: docsT2(mes, "I. Contables", contables, nombresContables),
+    },
+    {
+      nombre: "II. Presupuestales",
+      documentos: docsT2(mes, "II. Presupuestales", archivosPresupuestales, nombresPresupuestales),
+    },
+    {
+      nombre: "III. Programático",
+      documentos: docsT2(mes, "III. Programatico", [programatico], ["Gasto por Categoría Programática"]),
+    },
+    {
+      nombre: "IV. Adicional",
+      documentos: docsT2(mes, "IV. Adicional", archivosAdicional, nombresAdicional),
+    },
+  ];
+}
 
 const archivosAdicionalJunio = [
   "09_ Estado de Deuda Pública Mensual.pdf",
@@ -270,6 +314,8 @@ const archivosAdicionalJunio = [
   "22_ Relación de Cuentas Bancarias Productivas Especificas.pdf",
   "23_ Conciliación Entre los Ingresos Presupuestarios y Contables.pdf",
   "24_ Conciliación Entre los Egresos Presupuestarios y Contables.pdf",
+  "Reporte FAISMUN 2do Trimestre.pdf",
+  "Inventario de Bienes Muebles e Inmuebles 2026.pdf",
 ];
 
 const nombresAdicionalJunio = [
@@ -282,6 +328,8 @@ const nombresAdicionalJunio = [
   "Cuentas Bancarias Productivas Específicas",
   "Conciliación de Ingresos Presupuestarios y Contables",
   "Conciliación de Egresos Presupuestarios y Contables",
+  "Reporte Trimestral FAISMUN — Acuse SIMVER",
+  "Inventario de Bienes Muebles e Inmuebles 2026",
 ];
 
 const archivosLDFJunio = [
@@ -310,13 +358,6 @@ const nombresLDFJunio = [
   "Informe sobre Estudios Actuariales",
 ];
 
-function docsT2(carpeta: string, archivos: string[], nombres: string[]) {
-  return archivos.map((archivo, i) => ({
-    nombre: nombres[i],
-    href: `${BASE_T2}/${e(carpeta)}/${e(archivo)}`,
-  }));
-}
-
 export const estadosFinancierosT2_2026 = {
   periodo: "Segundo Trimestre 2026",
   lgcg: {
@@ -325,24 +366,34 @@ export const estadosFinancierosT2_2026 = {
     siglas: "LGCG",
     meses: [
       {
+        id: "abril",
+        nombre: "Abril 2026",
+        categorias: categoriasT2Mensual("abril", archivosContablesAbril, "EF15 Gasto por Categoria Programatica.pdf"),
+      },
+      {
+        id: "mayo",
+        nombre: "Mayo 2026",
+        categorias: categoriasT2Mensual("mayo", archivosContablesEneroFeb, "Gasto Categoria Programatica.pdf"),
+      },
+      {
         id: "junio",
         nombre: "Junio 2026",
         categorias: [
           {
             nombre: "I. Contables",
-            documentos: docsT2("I. Contables", archivosContablesMarzo, nombresContables),
+            documentos: docsT2("junio", "I. Contables", archivosContablesMarzo, nombresContables),
           },
           {
             nombre: "II. Presupuestales",
-            documentos: docsT2("II. Presupuestales", archivosPresupuestales, nombresPresupuestales),
+            documentos: docsT2("junio", "II. Presupuestales", archivosPresupuestales, nombresPresupuestales),
           },
           {
             nombre: "III. Programático",
-            documentos: docsT2("III. Programatico", ["Gasto Categoria Programatica.pdf"], ["Gasto por Categoría Programática"]),
+            documentos: docsT2("junio", "III. Programatico", ["Gasto Categoria Programatica.pdf"], ["Gasto por Categoría Programática"]),
           },
           {
             nombre: "IV. Adicional",
-            documentos: docsT2("IV. Adicional", archivosAdicionalJunio, nombresAdicionalJunio),
+            documentos: docsT2("junio", "IV. Adicional", archivosAdicionalJunio, nombresAdicionalJunio),
           },
         ],
       },
@@ -356,7 +407,7 @@ export const estadosFinancierosT2_2026 = {
       {
         id: "junio",
         nombre: "Junio 2026",
-        documentos: docsT2("V. Disciplina Financiera", archivosLDFJunio, nombresLDFJunio),
+        documentos: docsT2("junio", "V. Disciplina Financiera", archivosLDFJunio, nombresLDFJunio),
       },
     ] as MesLDF[],
   },
