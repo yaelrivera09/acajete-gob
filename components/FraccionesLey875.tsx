@@ -1,12 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown, FileSpreadsheet, Download } from "lucide-react";
+import { ChevronDown, FileSpreadsheet, FileText, Download } from "lucide-react";
 
 const BASE = "/docs/transparencia/fracciones";
 
 type Archivo = { nombre: string; archivo: string };
-type Dependencia = { nombre: string; slug: string; t1: Archivo[]; t2: Archivo[] };
+type Norma = { nombre: string; href: string; nota?: string };
+type Dependencia = { nombre: string; slug: string; t1: Archivo[]; t2: Archivo[]; normatividad?: Norma[] };
 
 const trimestres = [
   { key: "t1", etiqueta: "Primer Trimestre · Enero – Marzo 2026" },
@@ -475,6 +476,65 @@ const dependencias: Dependencia[] = [
       { nombre: "LTAIPVIL Art. 15 Fr. LIVb", archivo: "LTAIPVIL15LIVb COMERCIO 2DO TRIM.xlsx" },
       { nombre: "LTAIPVIL Art. 16 Fr. II B", archivo: "LTAIPVIL16IIB COMERCIO 2DO TRIM.xlsx" },
     ],
+    normatividad: [
+      {
+        nombre: "Reglamento Municipal de Comercio, Industrial y Espectáculos",
+        href: "/docs/transparencia/reglamentos/reglamento-comercio-industrial-espectaculos.pdf",
+        nota: "Gaceta Oficial del Estado · Núm. Ext. 340 · 26 de agosto de 2026 · págs. 7–35",
+      },
+    ],
+  },
+  {
+    nombre: "Secretaría del Ayuntamiento",
+    slug: "secretaria",
+    t1: [],
+    t2: [
+      { nombre: "Art. 70 Fr. XLVa", archivo: "45a-LGT_Art_70_Fr_XLV.xlsx" },
+      { nombre: "Art. 70 Fr. XLVb", archivo: "45b-LGT_Art_70_Fr_XLV.xlsx" },
+      { nombre: "Art. 70 Fr. XLVc", archivo: "45c-LGT_Art_70_Fr_XLV.xlsx" },
+      { nombre: "LTAIPVIL Art. 15 Fr. XIX", archivo: "LTAIPVIL15XIX (2).xlsx" },
+      { nombre: "LTAIPVIL Art. 15 Fr. XX", archivo: "LTAIPVIL15XX (2).xlsx" },
+      { nombre: "LTAIPVIL Art. 15 Fr. XXIX", archivo: "LTAIPVIL15XXIX.xlsx" },
+      { nombre: "LTAIPVIL Art. 15 Fr. XXVII", archivo: "LTAIPVIL15XXVII.xlsx" },
+      { nombre: "LTAIPVIL Art. 16 Fr. II G2", archivo: "LTAIPVIL16IIG2.xlsx" },
+      { nombre: "LTAIPVIL Art. 16 Fr. II H", archivo: "LTAIPVIL16IIH.xlsx" },
+    ],
+  },
+  {
+    nombre: "Tesorería Municipal",
+    slug: "tesoreria",
+    t1: [],
+    t2: [
+      { nombre: "Art. 70 Fr. XXVIII", archivo: "28-LGT_Art_70_Fr_XXVIII.xlsx" },
+      { nombre: "Art. 70 Fr. XL", archivo: "40-LGT_Art_70_Fr_XL.xlsx" },
+      { nombre: "Art. 70 Fr. XLIV", archivo: "44-LGT_Art_70_Fr_XLIV.xlsx" },
+      { nombre: "LTAIPVIL Art. 15 Fr. IV", archivo: "LTAIPVIL15IV (2).xlsx" },
+      { nombre: "LTAIPVIL Art. 15 Fr. IX", archivo: "LTAIPVIL15IX (1).xlsx" },
+      { nombre: "LTAIPVIL Art. 15 Fr. V", archivo: "LTAIPVIL15V.xlsx" },
+      { nombre: "LTAIPVIL Art. 15 Fr. VI", archivo: "LTAIPVIL15VI 1.xlsx" },
+      { nombre: "LTAIPVIL Art. 15 Fr. VIII (2018–2020)", archivo: "LTAIPVIL15VIII-2018-2020.xlsx" },
+      { nombre: "LTAIPVIL Art. 15 Fr. VIIIa", archivo: "LTAIPVIL15VIIIa.xlsx" },
+      { nombre: "LTAIPVIL Art. 15 Fr. VIIIb", archivo: "LTAIPVIL15VIIIb.xlsx" },
+      { nombre: "LTAIPVIL Art. 15 Fr. XI", archivo: "LTAIPVIL15XI.xlsx" },
+      { nombre: "LTAIPVIL Art. 15 Fr. XLI", archivo: "LTAIPVIL15XLI.xlsx" },
+      { nombre: "LTAIPVIL Art. 15 Fr. XLIIIa", archivo: "LTAIPVIL15XLIIIa.xlsx" },
+      { nombre: "LTAIPVIL Art. 15 Fr. XLIIIb", archivo: "LTAIPVIL15XLIIIb.xlsx" },
+      { nombre: "LTAIPVIL Art. 15 Fr. XLIX", archivo: "LTAIPVIL15XLIX.xlsx" },
+      { nombre: "LTAIPVIL Art. 15 Fr. XVII", archivo: "LTAIPVIL15XVII.xlsx" },
+      { nombre: "LTAIPVIL Art. 15 Fr. XVIa", archivo: "LTAIPVIL15XVIa (1).xlsx" },
+      { nombre: "LTAIPVIL Art. 15 Fr. XVIb", archivo: "LTAIPVIL15XVIb (1).xlsx" },
+      { nombre: "LTAIPVIL Art. 15 Fr. XXII", archivo: "LTAIPVIL15XXII.xlsx" },
+      { nombre: "LTAIPVIL Art. 15 Fr. XXIa", archivo: "LTAIPVIL15XXIa.xlsx" },
+      { nombre: "LTAIPVIL Art. 15 Fr. XXIb", archivo: "LTAIPVIL15XXIb.xlsx" },
+      { nombre: "LTAIPVIL Art. 15 Fr. XXIc", archivo: "LTAIPVIL15XXIc.xlsx" },
+      { nombre: "LTAIPVIL Art. 15 Fr. XXX", archivo: "LTAIPVIL15XXX.xlsx" },
+      { nombre: "LTAIPVIL Art. 15 Fr. XXXII", archivo: "LTAIPVIL15XXXII.xlsx" },
+      { nombre: "LTAIPVIL Art. 15 Fr. XXXIVa", archivo: "LTAIPVIL15XXXIVa.xlsx" },
+      { nombre: "LTAIPVIL Art. 15 Fr. XXXIa", archivo: "LTAIPVIL15XXXIa.xlsx" },
+      { nombre: "LTAIPVIL Art. 15 Fr. XXXIb", archivo: "LTAIPVIL15XXXIb.xlsx" },
+      { nombre: "LTAIPVIL Art. 15 Fr. Xa", archivo: "LTAIPVIL15Xa.xlsx" },
+      { nombre: "LTAIPVIL Art. 15 Fr. Xb", archivo: "LTAIPVIL15Xb.xlsx" },
+    ],
   },
 ];
 
@@ -520,6 +580,34 @@ export default function FraccionesLey875() {
 
                 {isOpen && (
                   <div className="px-6 pb-5 bg-brand-50/40 border-t border-brand-100">
+                    {dep.normatividad && dep.normatividad.length > 0 && (
+                      <div className="pt-4">
+                        <p className="text-[10px] uppercase tracking-[0.2em] text-accent-600 font-semibold mb-2 px-3">
+                          Normatividad
+                        </p>
+                        <ul className="space-y-1">
+                          {dep.normatividad.map((n) => (
+                            <li key={n.href}>
+                              <a
+                                href={n.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group flex items-center gap-3 px-3 py-2.5 rounded-sm hover:bg-white hover:shadow-sm transition-all"
+                              >
+                                <FileText size={15} className="text-red-600 group-hover:text-red-700 flex-shrink-0" />
+                                <span className="flex-1 leading-snug">
+                                  <span className="block text-sm text-brand-800 group-hover:text-brand-900">{n.nombre}</span>
+                                  {n.nota && (
+                                    <span className="block text-[11px] text-brand-500 mt-0.5">{n.nota}</span>
+                                  )}
+                                </span>
+                                <Download size={13} className="text-brand-300 group-hover:text-accent-500 flex-shrink-0 transition-colors" />
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                     {trimestres.map(({ key, etiqueta }) => {
                       const archivos = dep[key];
                       if (archivos.length === 0) return null;
