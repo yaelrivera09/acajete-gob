@@ -480,7 +480,7 @@ const dependencias: Dependencia[] = [
       {
         nombre: "Reglamento Municipal de Comercio, Industrial y Espectáculos",
         href: "/docs/transparencia/reglamentos/reglamento-comercio-industrial-espectaculos.pdf",
-        nota: "Gaceta Oficial del Estado · Núm. Ext. 340 · 26 de agosto de 2026 · págs. 7–35",
+        nota: "Publicado en la Gaceta Oficial del Estado, Núm. Ext. 340 del 26 de agosto de 2026. El reglamento de Acajete inicia en la página 7.",
       },
     ],
   },
