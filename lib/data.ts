@@ -7,7 +7,7 @@ export const siteConfig = {
   state: "Veracruz",
   period: "2026 — 2029",
   tagline: "Gobierno cercano, trabajo transparente",
-  email: "hayuntamientodeacajeteveracruz@gmail.com",
+  email: "ayuntamientoacajete2629@gmail.com",
   phone: "228 318 1096",
   whatsapp: "2311089253", // Número que recibe los mensajes del formulario
   address: "Palacio Municipal, Centro, Acajete, Veracruz, México",
