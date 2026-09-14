@@ -36,7 +36,7 @@ export const cabildo = [
   {
     cargo: "Presidenta Municipal",
     nombre: "C. María Claudia Nava Santos",
-    imagen: "/images/cabildo/presidenta.jpg",
+    imagen: null, // sin foto oficial proporcionada
   },
   {
     cargo: "Síndico",
@@ -46,12 +46,12 @@ export const cabildo = [
   {
     cargo: "Regidora",
     nombre: "Lic. Rosa Isela Hernández Soto",
-    imagen: "/images/cabildo/regidora.jpg",
+    imagen: null, // sin foto oficial proporcionada
   },
   {
     cargo: "Secretario del Ayuntamiento",
     nombre: "Lic. Gaspar Pérez Álvarez",
-    imagen: "/images/cabildo/secretario.jpg",
+    imagen: null, // sin foto oficial proporcionada
   },
 ];
 

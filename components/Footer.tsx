@@ -122,6 +122,17 @@ export default function Footer() {
                     <p className="font-[family-name:var(--font-playfair)] italic">
                         Gobierno Municipal {siteConfig.period}
                     </p>
+                    <p>
+                        Sitio desarrollado por{" "}
+                        <a
+                            href="https://www.rivgosoftware.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-accent-400 hover:text-accent-300 transition font-medium"
+                        >
+                            Rivgo Software
+                        </a>
+                    </p>
                 </div>
             </div>
         </footer>

@@ -119,21 +119,18 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
-            {/* Imagen / placeholder de la presidenta */}
+            {/* Emblema institucional (no hay foto oficial de la presidenta) */}
             <div className="lg:col-span-5">
-              <div className="relative aspect-[4/5] bg-gradient-to-br from-brand-100 to-brand-200 rounded-sm overflow-hidden shadow-2xl">
-                {/* TODO: reemplazar con foto oficial de la presidenta */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-brand-800 flex items-center justify-center">
-                      <Users className="text-white" size={32} />
-                    </div>
-                    <p className="text-sm text-brand-700 font-semibold">
-                      📷 Foto oficial de la Presidenta
-                    </p>
-                    <p className="text-xs text-brand-600 mt-1">
-                      Recomendado: 800×1000 px
-                    </p>
+              <div className="relative aspect-[4/5] bg-white rounded-sm overflow-hidden shadow-2xl border border-brand-100">
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-10">
+                  <div className="relative w-full aspect-square max-w-sm">
+                    <Image
+                      src="/images/logo-acajete-transparente.png"
+                      alt="Emblema del H. Ayuntamiento de Acajete, Veracruz 2026-2029"
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 1024px) 80vw, 35vw"
+                    />
                   </div>
                 </div>
                 {/* Decoración esquina */}
