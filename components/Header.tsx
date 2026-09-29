@@ -45,7 +45,7 @@ export default function Header() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center h-20">
                         {/* Logo + nombre */}
-                        <Link href="/" className="flex items-center gap-3 group">
+                        <Link href="/" className="flex items-center gap-3 group flex-shrink-0">
                             <div className="relative w-14 h-14 flex-shrink-0">
                                 <Image
                                     src="/images/logo-acajete.jpg"
@@ -59,19 +59,19 @@ export default function Header() {
                                 <p className="font-[family-name:var(--font-playfair)] text-lg leading-tight text-brand-800 font-bold">
                                     Acajete
                                 </p>
-                                <p className="text-[10px] uppercase tracking-[0.2em] text-accent-600 font-semibold">
+                                <p className="text-[10px] uppercase tracking-[0.2em] text-accent-600 font-semibold whitespace-nowrap">
                                     Veracruz · {siteConfig.period}
                                 </p>
                             </div>
                         </Link>
 
                         {/* Navegación desktop */}
-                        <nav className="hidden lg:flex items-center gap-1">
+                        <nav className="hidden xl:flex items-center gap-0.5">
                             {mainNav.map((item) => (
                                 <Link
                                     key={item.href}
                                     href={item.href}
-                                    className="relative px-4 py-2 text-sm font-medium text-brand-900 hover:text-accent-600 transition-colors group"
+                                    className="relative whitespace-nowrap px-3 py-2 text-sm font-medium text-brand-900 hover:text-accent-600 transition-colors group"
                                 >
                                     {item.label}
                                     <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-accent-500 transition-all duration-300 group-hover:w-3/4" />
@@ -82,7 +82,7 @@ export default function Header() {
                         {/* Botón menú móvil */}
                         <button
                             onClick={() => setMobileOpen(!mobileOpen)}
-                            className="lg:hidden p-2 rounded-md text-brand-800 hover:bg-brand-50"
+                            className="xl:hidden p-2 rounded-md text-brand-800 hover:bg-brand-50"
                             aria-label="Abrir menú"
                         >
                             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -92,7 +92,7 @@ export default function Header() {
 
                 {/* Menú móvil desplegable */}
                 {mobileOpen && (
-                    <nav className="lg:hidden bg-white border-t border-brand-100 shadow-lg animate-[fadeIn_0.3s_ease-out]">
+                    <nav className="xl:hidden bg-white border-t border-brand-100 shadow-lg animate-[fadeIn_0.3s_ease-out]">
                         <div className="px-4 py-3 space-y-1">
                             {mainNav.map((item) => (
                                 <Link
