@@ -26,6 +26,7 @@ export const mainNav = [
   { label: "Directorio", href: "/directorio" },
   { label: "Trámites", href: "/tramites" },
   { label: "Obras Públicas", href: "/obras-publicas" },
+  { label: "Reglamentos", href: "/reglamentos" },
   { label: "Turismo", href: "/turismo" },
   { label: "Transparencia", href: "/transparencia" },
   { label: "Contacto", href: "/contacto" },
@@ -426,3 +427,57 @@ export const avisoPrivacidad = {
     },
   ],
 };
+
+// ======== REGLAMENTOS Y NORMATIVIDAD MUNICIPAL ========
+export type DocumentoNormativo = {
+  id: string;
+  titulo: string;
+  descripcion: string;
+  href: string;
+  paginas: number;
+  peso: string;
+  fuente?: string;
+};
+
+export const gruposNormatividad: { id: string; nombre: string; documentos: DocumentoNormativo[] }[] = [
+  {
+    id: "reglamentos",
+    nombre: "Reglamentos",
+    documentos: [
+      {
+        id: "comercio",
+        titulo: "Reglamento Municipal de Comercio, Industrial y Espectáculos",
+        descripcion:
+          "Regula el ejercicio del comercio, la actividad industrial y los espectáculos públicos dentro del municipio, así como las licencias, permisos y sanciones aplicables.",
+        href: "/docs/transparencia/reglamentos/reglamento-comercio-industrial-espectaculos.pdf",
+        paginas: 72,
+        peso: "4.7 MB",
+        fuente: "Gaceta Oficial del Estado, Núm. Ext. 340 del 26 de agosto de 2026. El reglamento inicia en la página 7.",
+      },
+      {
+        id: "salud-proteccion-animal",
+        titulo: "Reglamento de Salud y Protección Animal",
+        descripcion:
+          "Establece las disposiciones sobre el trato, tenencia y comercio de animales en el municipio, el funcionamiento del Centro de Salud y Bienestar Animal, y las sanciones por maltrato.",
+        href: "/docs/reglamentos/reglamento-salud-proteccion-animal.pdf",
+        paginas: 25,
+        peso: "291 KB",
+      },
+    ],
+  },
+  {
+    id: "planeacion",
+    nombre: "Planeación Municipal",
+    documentos: [
+      {
+        id: "pmd",
+        titulo: "Plan Municipal de Desarrollo 2026 – 2029",
+        descripcion:
+          "Documento rector de la administración municipal: diagnóstico del municipio, ejes de gobierno, objetivos, estrategias y líneas de acción para el periodo 2026-2029.",
+        href: "/docs/reglamentos/plan-municipal-desarrollo-2026-2029.pdf",
+        paginas: 128,
+        peso: "3.7 MB",
+      },
+    ],
+  },
+];

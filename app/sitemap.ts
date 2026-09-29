@@ -8,6 +8,7 @@ const rutas: { path: string; prioridad: number; frecuencia: "weekly" | "monthly"
   { path: "/tramites", prioridad: 0.8, frecuencia: "monthly" },
   { path: "/tramites/registro-civil", prioridad: 0.7, frecuencia: "monthly" },
   { path: "/tramites/catastro", prioridad: 0.7, frecuencia: "monthly" },
+  { path: "/reglamentos", prioridad: 0.8, frecuencia: "monthly" },
   { path: "/gobierno", prioridad: 0.8, frecuencia: "monthly" },
   { path: "/directorio", prioridad: 0.8, frecuencia: "monthly" },
   { path: "/obras-publicas", prioridad: 0.7, frecuencia: "monthly" },
