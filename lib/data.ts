@@ -454,15 +454,6 @@ export const gruposNormatividad: { id: string; nombre: string; documentos: Docum
         peso: "4.7 MB",
         fuente: "Gaceta Oficial del Estado, Núm. Ext. 340 del 26 de agosto de 2026. El reglamento inicia en la página 7.",
       },
-      {
-        id: "salud-proteccion-animal",
-        titulo: "Reglamento de Salud y Protección Animal",
-        descripcion:
-          "Establece las disposiciones sobre el trato, tenencia y comercio de animales en el municipio, el funcionamiento del Centro de Salud y Bienestar Animal, y las sanciones por maltrato.",
-        href: "/docs/reglamentos/reglamento-salud-proteccion-animal.pdf",
-        paginas: 25,
-        peso: "291 KB",
-      },
     ],
   },
   {
@@ -479,5 +470,29 @@ export const gruposNormatividad: { id: string; nombre: string; documentos: Docum
         peso: "3.7 MB",
       },
     ],
+  },
+];
+
+// ======== AGRADECIMIENTOS INSTITUCIONALES ========
+export const agradecimientos = [
+  {
+    id: "pemex-2026",
+    titulo: "Agradecimiento a Petróleos Mexicanos (PEMEX)",
+    texto:
+      "Agradecemos a Petróleos Mexicanos (PEMEX) la donación de 5,000 litros de combustible Magna, realizada mediante el acuerdo DAS/088/2026, con ficha GRS/DE/124/2026.",
+    cierre:
+      "Este apoyo representa una contribución importante para nuestro municipio. Reiteramos nuestro reconocimiento por esta aportación.",
+    imagen: "/images/agradecimientos/pemex-magna-das-088-2026.webp",
+    alt: "Agradecimiento del Gobierno Municipal de Acajete a PEMEX por el donativo DAS/088/2026 de 5,000 litros de combustible Magna",
+  },
+  {
+    id: "pemex-2025",
+    titulo: "Agradecimiento a Petróleos Mexicanos (PEMEX)",
+    texto:
+      "Agradecemos a Petróleos Mexicanos (PEMEX) la donación de 5,000 litros de combustible Diesel, realizada mediante el acuerdo DAS/084/2025, con ficha GRS/DE/144/2025.",
+    cierre:
+      "Este apoyo representa una contribución importante para nuestro municipio. Reiteramos nuestro reconocimiento por esta aportación.",
+    imagen: "/images/agradecimientos/pemex-diesel-das-084-2025.webp",
+    alt: "Agradecimiento del Gobierno Municipal de Acajete a PEMEX por el donativo DAS/084/2025 de 5,000 litros de combustible Diesel",
   },
 ];

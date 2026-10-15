@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { FileText, Users, Eye, Phone, ArrowRight, MapPin, Download } from "lucide-react";
+import { agradecimientos } from "@/lib/data";
 import HeroCarousel from "@/components/HeroCarousel";
 
 // Accesos rápidos que aparecen debajo del hero
@@ -110,6 +111,44 @@ export default function Home() {
               <Download size={17} />
               Descargar convocatoria (PDF)
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ AGRADECIMIENTOS ============ */}
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.3em] text-accent-600 font-semibold mb-4 text-center">
+            Reconocimientos
+          </p>
+          <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl text-brand-900 font-bold mb-10 text-center">
+            Agradecimientos
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {agradecimientos.map((a) => (
+              <article
+                key={a.id}
+                className="bg-brand-50 rounded-sm overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 border border-brand-100 flex flex-col"
+              >
+                <div className="relative w-full bg-white" style={{ aspectRatio: "1652 / 952" }}>
+                  <Image
+                    src={a.imagen}
+                    alt={a.alt}
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
+                <div className="p-6 flex-1">
+                  <h3 className="font-[family-name:var(--font-playfair)] text-lg text-brand-900 font-bold mb-3 leading-tight">
+                    {a.titulo}
+                  </h3>
+                  <p className="text-sm text-brand-800 leading-relaxed mb-3">{a.texto}</p>
+                  <p className="text-sm text-brand-700 leading-relaxed">{a.cierre}</p>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
