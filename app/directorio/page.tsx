@@ -19,13 +19,13 @@ type Director = {
 function DirectorCard({ director }: { director: Director }) {
     return (
         <div className="bg-white rounded-sm shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border-t-4 border-brand-700 hover:border-accent-500 group">
-            <div className="relative h-72 bg-brand-100 overflow-hidden">
+            <div className="relative aspect-[4/5] bg-brand-100 overflow-hidden">
                 {director.imagen ? (
                     <Image
                         src={director.imagen}
                         alt={director.nombre}
                         fill
-                        className="object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-500"
+                        className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     />
                 ) : (
@@ -46,7 +46,7 @@ function DirectorCard({ director }: { director: Director }) {
                 {director.correo && (
                     <a
                         href={`mailto:${director.correo}`}
-                        className="mt-3 inline-flex items-start gap-2 text-xs text-accent-600 hover:text-accent-700 transition-colors break-all"
+                        className="mt-3 inline-flex items-center gap-1.5 text-[11px] leading-snug text-accent-600 hover:text-accent-700 transition-colors break-words"
                     >
                         <Mail size={13} className="flex-shrink-0 mt-0.5" />
                         <span>{director.correo}</span>
@@ -86,13 +86,13 @@ export default function DirectorioPage() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
                         {cabildo.map((persona, idx) => (
                             <div key={idx} className="bg-white rounded-sm shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border-t-4 border-accent-500 group">
-                                <div className="relative h-72 bg-brand-100 overflow-hidden">
+                                <div className="relative aspect-[4/5] bg-brand-100 overflow-hidden">
                                     {persona.imagen ? (
                                         <Image
                                             src={persona.imagen}
                                             alt={persona.nombre}
                                             fill
-                                            className="object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-500"
+                                            className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                                             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                                         />
                                     ) : (
@@ -111,7 +111,7 @@ export default function DirectorioPage() {
                                     {persona.correo && (
                                         <a
                                             href={`mailto:${persona.correo}`}
-                                            className="mt-3 inline-flex items-start gap-2 text-xs text-accent-600 hover:text-accent-700 transition-colors break-all"
+                                            className="mt-3 inline-flex items-center gap-1.5 text-[11px] leading-snug text-accent-600 hover:text-accent-700 transition-colors break-words"
                                         >
                                             <Mail size={13} className="flex-shrink-0 mt-0.5" />
                                             <span>{persona.correo}</span>

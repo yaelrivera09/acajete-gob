@@ -67,7 +67,7 @@ export default function GobiernoPage() {
                   {persona.correo && (
                     <a
                       href={`mailto:${persona.correo}`}
-                      className="mt-3 inline-block text-xs text-accent-600 hover:text-accent-700 transition-colors break-all"
+                      className="mt-3 inline-block text-[11px] leading-snug text-accent-600 hover:text-accent-700 transition-colors break-words"
                     >
                       {persona.correo}
                     </a>
