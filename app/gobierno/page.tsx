@@ -2,6 +2,7 @@ import Image from "next/image";
 import PageHeader from "@/components/PageHeader";
 import { cabildo, siteConfig } from "@/lib/data";
 import { Users } from "lucide-react";
+import Correo from "@/components/Correo";
 
 export const metadata = {
   title: "Gobierno | H. Ayuntamiento de Acajete",
@@ -69,7 +70,7 @@ export default function GobiernoPage() {
                       href={`mailto:${persona.correo}`}
                       className="mt-3 inline-block text-[11px] leading-snug text-accent-600 hover:text-accent-700 transition-colors break-words"
                     >
-                      {persona.correo}
+                      <Correo valor={persona.correo} />
                     </a>
                   )}
                 </div>

@@ -2,6 +2,7 @@ import PageHeader from "@/components/PageHeader";
 import { directores, cabildo, siteConfig } from "@/lib/data";
 import Image from "next/image";
 import { Briefcase, Mail, Phone, UserCircle } from "lucide-react";
+import Correo from "@/components/Correo";
 
 export const metadata = {
     title: "Directorio | H. Ayuntamiento de Acajete",
@@ -49,7 +50,7 @@ function DirectorCard({ director }: { director: Director }) {
                         className="mt-3 inline-flex items-center gap-1.5 text-[11px] leading-snug text-accent-600 hover:text-accent-700 transition-colors break-words"
                     >
                         <Mail size={13} className="flex-shrink-0 mt-0.5" />
-                        <span>{director.correo}</span>
+                        <span><Correo valor={director.correo} /></span>
                     </a>
                 )}
             </div>
@@ -114,7 +115,7 @@ export default function DirectorioPage() {
                                             className="mt-3 inline-flex items-center gap-1.5 text-[11px] leading-snug text-accent-600 hover:text-accent-700 transition-colors break-words"
                                         >
                                             <Mail size={13} className="flex-shrink-0 mt-0.5" />
-                                            <span>{persona.correo}</span>
+                                            <span><Correo valor={persona.correo} /></span>
                                         </a>
                                     )}
                                 </div>

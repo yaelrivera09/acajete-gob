@@ -2,6 +2,7 @@ import PageHeader from "@/components/PageHeader";
 import { siteConfig } from "@/lib/data";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
+import Correo from "@/components/Correo";
 
 export const metadata = {
     title: "Contacto | H. Ayuntamiento de Acajete",
@@ -67,8 +68,8 @@ function SeccionInfoContacto() {
                                     {item.label}
                                 </p>
                                 {item.esCorreo ? (
-                                    <a href={`mailto:${item.valor}`} className="text-xs text-brand-800 leading-relaxed break-all hover:text-accent-600 transition">
-                                        {item.valor}
+                                    <a href={`mailto:${item.valor}`} className="text-[11px] text-brand-800 leading-snug break-words hover:text-accent-600 transition">
+                                        <Correo valor={item.valor} />
                                     </a>
                                 ) : (
                                     <p className="text-sm text-brand-800 leading-relaxed">{item.valor}</p>

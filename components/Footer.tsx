@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Mail, Phone, MapPin, Clock } from "lucide-react"; import { siteConfig, mainNav } from "@/lib/data";
+import Correo from "@/components/Correo";
 
 export default function Footer() {
     return (
@@ -86,8 +87,8 @@ export default function Footer() {
                             </li>
                             <li className="flex items-start gap-3">
                                 <Mail size={18} className="text-accent-400 flex-shrink-0 mt-0.5" />
-                                <a href={`mailto:${siteConfig.email}`} className="text-brand-200 hover:text-accent-400 transition break-all text-xs">
-                                    {siteConfig.email}
+                                <a href={`mailto:${siteConfig.email}`} className="text-brand-200 hover:text-accent-400 transition break-words text-[11px] leading-snug">
+                                    <Correo valor={siteConfig.email} />
                                 </a>
                             </li>
                             <li className="flex items-start gap-3 pt-2 border-t border-brand-800">
