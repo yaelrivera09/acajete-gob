@@ -64,6 +64,14 @@ export default function GobiernoPage() {
                   <h3 className="font-[family-name:var(--font-playfair)] text-lg text-brand-900 font-bold leading-tight">
                     {persona.nombre}
                   </h3>
+                  {persona.correo && (
+                    <a
+                      href={`mailto:${persona.correo}`}
+                      className="mt-3 inline-block text-xs text-accent-600 hover:text-accent-700 transition-colors break-all"
+                    >
+                      {persona.correo}
+                    </a>
+                  )}
                 </div>
               </article>
             ))}

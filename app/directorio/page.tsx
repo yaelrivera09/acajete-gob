@@ -12,6 +12,7 @@ type Director = {
     area: string;
     titular: string;
     nombre: string;
+    correo: string | null;
     imagen: string | null;
 };
 
@@ -42,6 +43,15 @@ function DirectorCard({ director }: { director: Director }) {
                     {director.nombre}
                 </p>
                 <p className="text-xs text-brand-600">{director.titular}</p>
+                {director.correo && (
+                    <a
+                        href={`mailto:${director.correo}`}
+                        className="mt-3 inline-flex items-start gap-2 text-xs text-accent-600 hover:text-accent-700 transition-colors break-all"
+                    >
+                        <Mail size={13} className="flex-shrink-0 mt-0.5" />
+                        <span>{director.correo}</span>
+                    </a>
+                )}
             </div>
         </div>
     );
@@ -98,6 +108,15 @@ export default function DirectorioPage() {
                                     <p className="font-[family-name:var(--font-playfair)] text-base text-brand-900 font-bold leading-tight">
                                         {persona.nombre}
                                     </p>
+                                    {persona.correo && (
+                                        <a
+                                            href={`mailto:${persona.correo}`}
+                                            className="mt-3 inline-flex items-start gap-2 text-xs text-accent-600 hover:text-accent-700 transition-colors break-all"
+                                        >
+                                            <Mail size={13} className="flex-shrink-0 mt-0.5" />
+                                            <span>{persona.correo}</span>
+                                        </a>
+                                    )}
                                 </div>
                             </div>
                         ))}

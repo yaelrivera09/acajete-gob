@@ -37,44 +37,49 @@ export const cabildo = [
   {
     cargo: "Presidenta Municipal",
     nombre: "C. María Claudia Nava Santos",
+    correo: null,
     imagen: null, // sin foto oficial proporcionada
   },
   {
-    cargo: "Síndico",
+    cargo: "Síndico Único",
     nombre: "C. José Luis Martínez Rivera",
+    correo: "ayuntamientosindicatura@gmail.com",
     imagen: "/images/cabildo/sindico.jpg",
   },
   {
-    cargo: "Regidora",
-    nombre: "Lic. Rosa Isela Hernández Soto",
+    cargo: "Regidora Única",
+    nombre: "Mtra. Rosa Isela Hernández Soto",
+    correo: "regiduriaacajete20262029@gmail.com",
     imagen: null, // sin foto oficial proporcionada
   },
   {
     cargo: "Secretario del Ayuntamiento",
     nombre: "Lic. Gaspar Pérez Álvarez",
+    correo: "presidenciaacajete20262029@gmail.com",
     imagen: null, // sin foto oficial proporcionada
   },
 ];
 
 // ======== DIRECTORES DE ÁREA ========
 export const directores = [
-  { area: "DIF Municipal", titular: "Directora del DIF Municipal", nombre: "C. Amairani Hernández Parra", imagen: "/images/directores/dif.jpg" },
-  { area: "Contraloría Interna", titular: "Contralor Interno", nombre: "L.C. Levit Hernández Jiménez", imagen: "/images/directores/contraloria.jpg" },
-  { area: "Tesorería Municipal", titular: "Tesorera Municipal", nombre: "L.C. Mariela Cortes Hernández", imagen: null },
-  { area: "Instituto Municipal de las Mujeres", titular: "Directora", nombre: "C. Diana Laura Hernández Suárez", imagen: "/images/directores/imm.jpg" },
-  { area: "Dirección Jurídica", titular: "Director Jurídico", nombre: "Lic. David Gustavo Grau González", imagen: "/images/directores/juridico.jpg" },
-  { area: "Catastro", titular: "Director de Catastro", nombre: "C. José Manuel Hernández Hernández", imagen: "/images/directores/catastro.jpg" },
-  { area: "Protección Civil", titular: "Director de Protección Civil", nombre: "Ing. Paulo César Hernández Rodríguez", imagen: "/images/directores/proteccion-civil.jpg" },
-  { area: "Seguridad Pública", titular: "Director de Seguridad Pública", nombre: "Lic. Cristóbal González Vizcarra", imagen: null },
-  { area: "Registro Civil", titular: "Director de Registro Civil", nombre: "Lic. Gustavo Miguel Armenta Luna", imagen: "/images/directores/registro-civil.jpg" },
-  { area: "Obras Públicas", titular: "Director de Obras Públicas", nombre: "Ing. Esteban Cutberto Alarcón Hernández", imagen: "/images/directores/obras-publicas.jpg" },
-  { area: "Archivo y Biblioteca", titular: "Director", nombre: "Lic. Jorge Luis Castro Hernández", imagen: "/images/directores/archivo.jpg" },
-  { area: "Desarrollo Urbano", titular: "Director de Desarrollo Urbano", nombre: "Ing. Carlos Adrián Miranda Melchor", imagen: "/images/directores/desarrollo-urbano.jpg" },
-  { area: "Oficialía Mayor", titular: "Oficial Mayor", nombre: "Juan Jorge Ortega Morales", imagen: "/images/directores/oficialía.jpg" },
-  { area: "Transparencia", titular: "Titular de Transparencia", nombre: "Lic. Blanca Estela Carmona García", imagen: "/images/directores/transparencia.jpg" },
-  { area: "Fomento Deportivo", titular: "Director de Fomento Deportivo", nombre: "Óscar García Falfán", imagen: "/images/directores/deportivo.jpg" },
-  { area: "Fomento Agropecuario", titular: "Director de Fomento Agropecuario", nombre: "C. Rubén Alarcón Martínez", imagen: "/images/directores/agropecuario.jpg" },
-  { area: "Parques y Jardines", titular: "Director de Parques y Jardines", nombre: "C. Alejandro Martínez García", imagen: "/images/directores/parques.jpg" },
+  { area: "DIF Municipal", titular: "Directora del DIF Municipal", nombre: "C. Amairani Hernández Parra", correo: "difmunicipalacajete20262029@gmail.com", imagen: "/images/directores/dif.jpg" },
+  { area: "Contraloría Interna", titular: "Contralor Interno", nombre: "L.C. Levit Hernández Jiménez", correo: "contraloriaacajete2025.2029@gmail.com", imagen: "/images/directores/contraloria.jpg" },
+  { area: "Tesorería Municipal", titular: "Tesorera Única", nombre: "Mtra. Dora Itzel Santiago Alonso", correo: "tesoreriaacajete2629@gmail.com", imagen: null },
+  { area: "Instituto Municipal de las Mujeres", titular: "Directora del Instituto de la Mujer", nombre: "C. Diana Laura Hernández Suárez", correo: "immacajete2026.2029@gmail.com", imagen: "/images/directores/imm.jpg" },
+  { area: "Dirección Jurídica", titular: "Director Jurídico", nombre: "Lic. David Gustavo Grau González", correo: "direccionjuridica.acajete@gmail.com", imagen: "/images/directores/juridico.jpg" },
+  { area: "Catastro", titular: "Director de Catastro", nombre: "C. José Manuel Hernández Hernández", correo: "catastroacajete526@gmail.com", imagen: "/images/directores/catastro.jpg" },
+  { area: "Comercio", titular: "Directora de Comercio", nombre: "C. Karina Arriaga Martínez", correo: "acajetecomercio890@gmail.com", imagen: null },
+  { area: "Protección Civil", titular: "Director de Protección Civil", nombre: "Ing. Paulo César Hernández Rodríguez", correo: "proteccioncivilacajete26.29@gmail.com", imagen: "/images/directores/proteccion-civil.jpg" },
+  { area: "Comandancia Municipal y Seguridad Pública", titular: "Director de Comandancia Municipal y Seguridad Pública", nombre: "Lic. Cristóbal González Vizcarra", correo: "comandanciaacajete2629@gmail.com", imagen: null },
+  { area: "Registro Civil", titular: "Director de Registro Civil", nombre: "Lic. Gustavo Miguel Armenta Luna", correo: "rcivilacajete001@gmail.com", imagen: "/images/directores/registro-civil.jpg" },
+  { area: "Obras Públicas", titular: "Director de Obras Públicas", nombre: "Arq. José Antonio Hernández Juan", correo: "opacajete20262029@gmail.com", imagen: null },
+  { area: "Área Coordinadora de Archivos", titular: "Titular del Área Coordinadora de Archivos", nombre: "Lic. Jorge Luis Castro Hernández", correo: "jorgeluiscastrohdz@gmail.com", imagen: "/images/directores/archivo.jpg" },
+  { area: "Desarrollo Urbano", titular: "Director de Desarrollo Urbano", nombre: "Ing. Carlos Adrián Miranda Melchor", correo: null, imagen: "/images/directores/desarrollo-urbano.jpg" },
+  { area: "Oficialía Mayor", titular: "Oficial Mayor", nombre: "C. Juan Jorge Ortega Morales", correo: "oficialiamayor2026@gmail.com", imagen: "/images/directores/oficialía.jpg" },
+  { area: "Unidad de Transparencia", titular: "Titular de la Unidad de Transparencia", nombre: "Lic. Blanca Estela Carmona García", correo: "transparenciacajete@gmail.com", imagen: "/images/directores/transparencia.jpg" },
+  { area: "Fomento Deportivo", titular: "Director de Fomento Deportivo", nombre: "C. Óscar García Falfán", correo: null, imagen: "/images/directores/deportivo.jpg" },
+  { area: "Fomento Agropecuario, Medio Ambiente y Ecología", titular: "Director de Fomento Agropecuario", nombre: "C. Rubén Alarcón Martínez", correo: "fomentoagropecuario2@hotmail.com", imagen: "/images/directores/agropecuario.jpg" },
+  { area: "Parques y Jardines", titular: "Director de Parques y Jardines", nombre: "C. Alejandro García Martínez", correo: null, imagen: "/images/directores/parques.jpg" },
 ];
 
 // ======== TRÁMITES DE REGISTRO CIVIL ========
