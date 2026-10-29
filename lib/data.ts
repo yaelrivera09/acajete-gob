@@ -372,7 +372,7 @@ export const leyesTransparencia = [
     titulo: "Ley de Transparencia y Acceso a la Información Pública para el Estado de Veracruz",
     descripcion:
       "Portal oficial de transparencia conforme a la Ley 875. Se publica la información obligatoria relacionada con la gestión, administración y rendición de cuentas del H. Ayuntamiento.",
-    enlace: "#",
+    enlace: "#informacion-de-oficio",
   },
   {
     id: "ley-250",
@@ -380,7 +380,7 @@ export const leyesTransparencia = [
     titulo: "Información de Oficio Fundamental",
     descripcion:
       "Información de oficio y fundamental aplicable a todas las áreas municipales, disponible de manera obligatoria y sin necesidad de solicitud ciudadana conforme al Artículo 50.",
-    enlace: "#",
+    enlace: "#informacion-de-oficio",
   },
   {
     id: "ley-contabilidad",
@@ -388,7 +388,7 @@ export const leyesTransparencia = [
     titulo: "Reportes financieros y Cuenta Pública",
     descripcion:
       "Reportes financieros, ejercicio presupuestal, Cuenta Pública y armonización contable obligatoria para transparentar el manejo y estado de la hacienda municipal, en cumplimiento de la Ley General de Contabilidad Gubernamental.",
-    enlace: "#",
+    enlace: "#estados-financieros",
   },
   {
     id: "ley-disciplina-financiera",
@@ -396,7 +396,7 @@ export const leyesTransparencia = [
     titulo: "Responsabilidad hacendaria y financiera",
     descripcion:
       "Ley de orden público que establece los criterios generales de responsabilidad hacendaria y financiera que rigen a las Entidades Federativas y los Municipios, para un manejo sostenible de las finanzas públicas.",
-    enlace: "#",
+    enlace: "#estados-financieros",
   },
 ];
 

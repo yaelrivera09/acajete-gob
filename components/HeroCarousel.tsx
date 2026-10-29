@@ -96,9 +96,6 @@ export default function HeroCarousel() {
           ) : (
             <div className="absolute inset-0 bg-gradient-to-br from-brand-800 via-brand-900 to-brand-950">
               <div className="absolute inset-0 opacity-20 bg-[url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Cpath%20d%3D%22M50%2010L60%2040L90%2045L67%2065L75%2095L50%2078L25%2095L33%2065L10%2045L40%2040Z%22%20fill%3D%22%23ffffff%22%20opacity%3D%220.1%22%2F%3E%3C%2Fsvg%3E')]" />
-              <div className="absolute bottom-6 left-6 text-xs text-brand-300 bg-black/40 px-3 py-1.5 rounded-full border border-brand-600/50">
-                📷 {slide.placeholderLabel}
-              </div>
             </div>
           )}
 

@@ -22,9 +22,13 @@ export default function TransparenciaPage() {
 
       <SeccionIntro />
       <SeccionLeyes />
-      <FraccionesLey875 />
-      <EstadosFinancieros datos={estadosFinancierosT1_2026} />
-      <EstadosFinancieros datos={estadosFinancierosT2_2026} />
+      <div id="informacion-de-oficio" className="scroll-mt-24">
+        <FraccionesLey875 />
+      </div>
+      <div id="estados-financieros" className="scroll-mt-24">
+        <EstadosFinancieros datos={estadosFinancierosT1_2026} />
+        <EstadosFinancieros datos={estadosFinancierosT2_2026} />
+      </div>
       <SeccionCompromiso />
     </>
   );

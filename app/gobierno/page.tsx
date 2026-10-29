@@ -1,7 +1,7 @@
 import Image from "next/image";
 import PageHeader from "@/components/PageHeader";
 import { cabildo, siteConfig } from "@/lib/data";
-import { Users, ExternalLink, Download } from "lucide-react";
+import { UserCircle, ExternalLink, Download } from "lucide-react";
 import Correo from "@/components/Correo";
 
 export const metadata = {
@@ -39,19 +39,20 @@ export default function GobiernoPage() {
                 className="group bg-white rounded-sm overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1"
               >
                 {/* Foto o placeholder */}
-                <div className="relative aspect-[4/5] bg-gradient-to-br from-brand-100 to-brand-200 overflow-hidden">
-                  {/* TODO: Cuando tengas las fotos, reemplaza este bloque por:
-                      <Image src={persona.imagen} alt={persona.nombre} fill className="object-cover" />
-                  */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center p-6">
-                      <div className="w-20 h-20 mx-auto mb-3 rounded-full bg-brand-800 flex items-center justify-center">
-                        <Users className="text-white" size={28} />
-                      </div>
-                      <p className="text-xs text-brand-700 font-semibold">📷 Foto oficial</p>
-                      <p className="text-[10px] text-brand-600 mt-1">400×500 px</p>
+                <div className="relative aspect-[4/5] bg-brand-100 overflow-hidden">
+                  {persona.imagen ? (
+                    <Image
+                      src={persona.imagen}
+                      alt={persona.nombre}
+                      fill
+                      className="object-cover object-top"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <UserCircle className="text-brand-300" size={72} />
                     </div>
-                  </div>
+                  )}
 
                   {/* Franja naranja decorativa */}
                   <div className="absolute bottom-0 left-0 right-0 h-1 bg-accent-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
