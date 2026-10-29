@@ -15,7 +15,7 @@ export default function Footer() {
                         <div className="flex items-center gap-3 mb-4">
                             <div className="relative w-16 h-16 bg-white rounded-full p-1">
                                 <Image
-                                    src="/images/logo-acajete.jpg"
+                                    src="/images/logo-acajete-2026.png"
                                     alt="Acajete"
                                     fill
                                     className="object-contain rounded-full"

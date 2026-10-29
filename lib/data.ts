@@ -14,8 +14,8 @@ export const siteConfig = {
   facebook: "https://www.facebook.com/profile.php?id=61585844913895",
   instagram: "#", // sin Instagram por ahora
   horario: {
-    semana: "Lunes a viernes · 9:00 a 16:00 hrs",
-    sabado: "Sábados · 9:00 a 13:00 hrs",
+    semana: "Lunes a viernes · 9:00 a 15:00 hrs",
+    sabado: "Sábados · Sin atención ciudadana",
   },
 };
 

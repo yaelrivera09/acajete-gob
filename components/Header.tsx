@@ -48,7 +48,7 @@ export default function Header() {
                         <Link href="/" className="flex items-center gap-3 group flex-shrink-0">
                             <div className="relative w-14 h-14 flex-shrink-0">
                                 <Image
-                                    src="/images/logo-acajete.jpg"
+                                    src="/images/logo-acajete-2026.png"
                                     alt="Escudo de Acajete"
                                     fill
                                     className="object-contain"

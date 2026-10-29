@@ -1,7 +1,7 @@
 import Image from "next/image";
 import PageHeader from "@/components/PageHeader";
 import { cabildo, siteConfig } from "@/lib/data";
-import { Users } from "lucide-react";
+import { Users, ExternalLink, Download } from "lucide-react";
 import Correo from "@/components/Correo";
 
 export const metadata = {
@@ -76,6 +76,59 @@ export default function GobiernoPage() {
                 </div>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Organigrama */}
+      <section className="pb-20 md:pb-28">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-3 mb-3">
+            <div className="w-10 h-0.5 bg-accent-500" />
+            <h2 className="font-[family-name:var(--font-playfair)] text-2xl md:text-3xl text-brand-900 font-bold">
+              Organigrama
+            </h2>
+          </div>
+          <p className="text-sm text-brand-600 mb-8 pl-[52px]">
+            Estructura orgánica del H. Ayuntamiento de Acajete, administración 2026&nbsp;&ndash;&nbsp;2029.
+          </p>
+
+          <a
+            href="/images/organigrama-2026-2029.jpg"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group block bg-white rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-300 border border-brand-100 p-4 sm:p-6"
+            aria-label="Ver el organigrama en tamaño completo"
+          >
+            <div className="relative w-full" style={{ aspectRatio: "1 / 1" }}>
+              <Image
+                src="/images/organigrama-2026-2029.jpg"
+                alt="Organigrama del H. Ayuntamiento de Acajete, Veracruz, administración 2026-2029"
+                fill
+                className="object-contain"
+                sizes="(max-width: 1024px) 100vw, 1000px"
+              />
+            </div>
+          </a>
+
+          <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2">
+            <a
+              href="/images/organigrama-2026-2029.jpg"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-xs font-semibold text-accent-600 uppercase tracking-wider hover:gap-3 transition-all"
+            >
+              Ver en tamaño completo
+              <ExternalLink size={13} />
+            </a>
+            <a
+              href="/images/organigrama-2026-2029.jpg"
+              download
+              className="inline-flex items-center gap-2 text-xs font-semibold text-brand-600 uppercase tracking-wider hover:text-brand-900 transition-colors"
+            >
+              Descargar
+              <Download size={13} />
+            </a>
           </div>
         </div>
       </section>

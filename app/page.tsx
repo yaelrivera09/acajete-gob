@@ -164,7 +164,7 @@ export default function Home() {
                 <div className="absolute inset-0 flex flex-col items-center justify-center p-10">
                   <div className="relative w-full aspect-square max-w-sm">
                     <Image
-                      src="/images/logo-acajete-transparente.png"
+                      src="/images/logo-acajete-2026.png"
                       alt="Emblema del H. Ayuntamiento de Acajete, Veracruz 2026-2029"
                       fill
                       className="object-contain"

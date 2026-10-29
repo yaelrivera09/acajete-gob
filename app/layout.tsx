@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     siteName: "H. Ayuntamiento de Acajete, Veracruz",
     title: "H. Ayuntamiento de Acajete, Veracruz | Sitio oficial",
     description: DESCRIPCION,
-    images: [{ url: "/images/logo-acajete.jpg", width: 1080, height: 1082, alt: "Emblema del H. Ayuntamiento de Acajete" }],
+    images: [{ url: "/images/og-acajete.jpg", width: 1200, height: 630, alt: "H. Ayuntamiento de Acajete, Veracruz" }],
   },
   robots: { index: true, follow: true },
 };
@@ -52,7 +52,7 @@ const organizacionJsonLd = {
   name: "H. Ayuntamiento de Acajete, Veracruz",
   alternateName: ["Ayuntamiento de Acajete", "Gobierno Municipal de Acajete"],
   url: SITIO,
-  logo: `${SITIO}/images/logo-acajete-transparente.png`,
+  logo: `${SITIO}/images/logo-acajete-2026.png`,
   email: siteConfig.email,
   telephone: `+52 ${siteConfig.phone}`,
   address: {
