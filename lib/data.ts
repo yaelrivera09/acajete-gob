@@ -459,6 +459,16 @@ export const gruposNormatividad: { id: string; nombre: string; documentos: Docum
         peso: "4.7 MB",
         fuente: "Gaceta Oficial del Estado, Núm. Ext. 340 del 26 de agosto de 2026. El reglamento inicia en la página 7.",
       },
+      {
+        id: "bando-policia-gobierno",
+        titulo: "Bando de Policía y Gobierno",
+        descripcion:
+          "Ordenamiento que regula la organización del gobierno municipal, los derechos y obligaciones de la ciudadanía, el uso de la vía pública, las faltas administrativas y las sanciones aplicables en el municipio.",
+        href: "/docs/reglamentos/bando-de-policia-y-buen-gobierno.pdf",
+        paginas: 21,
+        peso: "244 KB",
+        fuente: "Gaceta Oficial del Estado, Tomo CLXXXII, Núm. 409 del 23 de diciembre de 2010. El Bando inicia en la página 3.",
+      },
     ],
   },
   {
@@ -499,5 +509,31 @@ export const agradecimientos = [
       "Este apoyo representa una contribución importante para nuestro municipio. Reiteramos nuestro reconocimiento por esta aportación.",
     imagen: "/images/agradecimientos/pemex-diesel-das-084-2025.webp",
     alt: "Agradecimiento del Gobierno Municipal de Acajete a PEMEX por el donativo DAS/084/2025 de 5,000 litros de combustible Diesel",
+  },
+];
+
+// ======== AVISOS Y CAMPAÑAS ========
+export const avisos = [
+  {
+    id: "temporada-invernal-2026-2027",
+    titulo: "Prepárate para la temporada invernal 2026 – 2027",
+    entradilla:
+      "En atención al llamado de la Jurisdicción Sanitaria Número V, a través de los Servicios de Salud de Veracruz (SESVER), el H. Ayuntamiento de Acajete invita a la ciudadanía a reforzar las medidas preventivas ante el descenso de las temperaturas.",
+    intro:
+      "En coordinación con las áreas municipales correspondientes, compartimos las siguientes recomendaciones para cuidar la salud y el bienestar de nuestras familias:",
+    recomendaciones: [
+      "Abrígate bien, protege cabeza, cuello, manos y pies.",
+      "Evita los cambios bruscos de temperatura y cubre nariz y boca al salir de casa.",
+      "Lávate las manos frecuentemente y mantén una alimentación saludable.",
+      "Acude a tu unidad de salud para recibir la vacuna contra la influenza.",
+      "Evita utilizar braseros, anafres o estufas en espacios cerrados o sin ventilación.",
+      "Evita automedicarte y acude a recibir atención médica ante cualquier síntoma respiratorio.",
+    ],
+    nota:
+      "Recuerda prestar especial atención a niñas y niños menores de cinco años, personas adultas mayores, mujeres embarazadas y personas con enfermedades crónicas.",
+    cierre: "La prevención es tarea de todas y todos. ¡En Acajete nos cuidamos todos!",
+    imagen: "/images/avisos/temporada-invernal-2026-2027.jpg",
+    alt: "Cartel de la campaña Temporada de Frío, de octubre a febrero, con recomendaciones para abrigarse por capas",
+    documento: { nombre: "Boletín informativo", href: "/docs/avisos/boletin-temporada-de-frio.pdf" },
   },
 ];

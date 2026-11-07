@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FileText, Users, Eye, Phone, ArrowRight, MapPin, Download } from "lucide-react";
-import { agradecimientos } from "@/lib/data";
+import { FileText, Users, Eye, Phone, ArrowRight, MapPin, Download, Check } from "lucide-react";
+import { agradecimientos, avisos } from "@/lib/data";
 import HeroCarousel from "@/components/HeroCarousel";
 
 // Accesos rápidos que aparecen debajo del hero
@@ -69,6 +69,73 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ============ AVISOS ============ */}
+      {avisos.map((aviso) => (
+        <section key={aviso.id} className="py-16 bg-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-xs uppercase tracking-[0.3em] text-accent-600 font-semibold mb-4">
+              Aviso a la ciudadanía
+            </p>
+            <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl text-brand-900 font-bold mb-8 leading-tight">
+              {aviso.titulo}
+            </h2>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+              <div className="lg:col-span-5">
+                <a
+                  href={aviso.imagen}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block rounded-sm overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+                  aria-label="Ver el cartel en tamaño completo"
+                >
+                  <Image
+                    src={aviso.imagen}
+                    alt={aviso.alt}
+                    width={1159}
+                    height={1400}
+                    className="w-full h-auto"
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                  />
+                </a>
+              </div>
+
+              <div className="lg:col-span-7">
+                <p className="text-brand-800 leading-relaxed mb-4">{aviso.entradilla}</p>
+                <p className="text-brand-800 leading-relaxed mb-5">{aviso.intro}</p>
+
+                <ul className="space-y-3 mb-6">
+                  {aviso.recomendaciones.map((r) => (
+                    <li key={r} className="flex items-start gap-3">
+                      <Check size={18} className="text-accent-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-brand-800 leading-relaxed">{r}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <p className="text-sm text-brand-700 leading-relaxed bg-brand-50 border-l-4 border-accent-500 p-4 mb-5">
+                  {aviso.nota}
+                </p>
+
+                <p className="font-[family-name:var(--font-playfair)] italic text-brand-800 text-lg mb-7">
+                  {aviso.cierre}
+                </p>
+
+                <a
+                  href={aviso.documento.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2.5 bg-accent-500 hover:bg-accent-600 text-white font-semibold px-6 py-3 rounded-sm transition-colors duration-200 text-sm uppercase tracking-wider shadow"
+                >
+                  <Download size={16} />
+                  {aviso.documento.nombre} (PDF)
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      ))}
 
       {/* ============ CONVOCATORIA ============ */}
       <section className="py-16 bg-brand-50">
