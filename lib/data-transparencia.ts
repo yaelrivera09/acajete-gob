@@ -412,3 +412,122 @@ export const estadosFinancierosT2_2026 = {
     ] as MesLDF[],
   },
 };
+
+const BASE_T3 = "/docs/transparencia/2026/t3";
+
+function docsT3(mes: string, carpeta: string, archivos: string[], nombres: string[]) {
+  return archivos.map((archivo, i) => ({
+    nombre: nombres[i],
+    href: `${BASE_T3}/${mes}/PDF/${e(carpeta)}/${e(archivo)}`,
+  }));
+}
+
+// Julio y agosto llegan con el Estado Analítico de Ingresos numerado "1."
+// en lugar de "I.", como sí lo trae septiembre.
+const archivosPresupuestalesJulAgo = [
+  "1. Estado Analitico de Ingresos.pdf",
+  "i. Estado del Presupuesto de Egresos_ Clasificacion Administrativa.pdf",
+  "ii. Estado del Presupuesto de Egresos_ Clasificacion Economica.pdf",
+  "iii. Estado del Presupuesto de Egresos_ Clasif Objeto del Gasto.pdf",
+  "iv. Estado del Presupuesto de Egresos_ Clasificacion Funcional.pdf",
+];
+
+// Tesorería numeró como "18_" tanto FAISMUN como FORTAMUN en julio y agosto;
+// en septiembre ya corrigió FAISMUN a "17_".
+const archivosAdicionalJulAgo = [
+  "18_ Formato de Aplicación de los Recursos del FAISMUN_DF 2026.pdf",
+  "18_ Formato de Aplicación de los Recursos del FORTAMUN_DF 2026.pdf",
+  "19_ Programas con Recursos Concurrente por Orden de Gobierno.pdf",
+  "20_ Ejercicio y Destino de Ingresos Extraordinarios por Convenios federales.pdf",
+  "21_ Montos Pagados por Ayudas y Subsidios.pdf",
+  "22_ Relación de Cuentas Bancarias Productivas Especificas.pdf",
+];
+
+const archivosAdicionalSeptiembre = [
+  "17_ Formato de Aplicación de los Recursos del FAISMUN 2026.pdf",
+  "18_ Formato de Aplicación de los Recursos del FORTAMUN_DF 2026.pdf",
+  "19_ Programas con Recursos Concurrente por Orden de Gobierno.pdf",
+  "20_ Ejercicio y Destino de Ingresos Extraordinarios por Convenios federales.pdf",
+  "21_ Montos Pagados por Ayudas y Subsidios.pdf",
+  "22_ Relación de Cuentas Bancarias Productivas Especificas.pdf",
+];
+
+const nombresAdicionalT3 = [
+  "Aplicación de Recursos FAISMUN 2026",
+  "Aplicación de Recursos FORTAMUN-DF 2026",
+  "Programas con Recursos Concurrentes por Orden de Gobierno",
+  "Ingresos Extraordinarios por Convenios Federales",
+  "Montos Pagados por Ayudas y Subsidios",
+  "Cuentas Bancarias Productivas Específicas",
+];
+
+const archivosLDFSeptiembre = [
+  "1_ Estado Situacion Financiera Detallado LDF.pdf",
+  "2_ Balance Presupuestario_LDF.pdf",
+  "3_ Estado Analitico de Ingresos Detallado_LDF.pdf",
+  "4_ Presupuesto de Egresos Detallado_Objeto del Gasto LDF.pdf",
+  "5_ Presupuesto de Egresos Detallado_Clasif Administrativa LDF.pdf",
+  "6_ Presupuesto de Egresos Detallado_Clasif Funcional LDF.pdf",
+  "7_ Clasificación de Servicios Personales por Categoria LDF.pdf",
+  "8_DeudaLDF.pdf",
+  "9_Informe Analitico De Obligaciones Diferentes De Financiamiento LDF.pdf",
+];
+
+const nombresLDFSeptiembre = [
+  "Estado de Situación Financiera Detallado",
+  "Balance Presupuestario",
+  "Estado Analítico de Ingresos Detallado",
+  "Presupuesto de Egresos Detallado: Objeto del Gasto",
+  "Presupuesto de Egresos Detallado: Clasificación Administrativa",
+  "Presupuesto de Egresos Detallado: Clasificación Funcional",
+  "Servicios Personales por Categoría",
+  "Informe Analítico de la Deuda y Otros Pasivos",
+  "Informe de Obligaciones Diferentes de Financiamiento",
+];
+
+function categoriasT3(mes: string, presupuestales: string[], adicional: string[]): Categoria[] {
+  return [
+    {
+      nombre: "I. Contables",
+      documentos: docsT3(mes, "I. Contables", archivosContablesMarzo, nombresContables),
+    },
+    {
+      nombre: "II. Presupuestales",
+      documentos: docsT3(mes, "II. Presupuestales", presupuestales, nombresPresupuestales),
+    },
+    {
+      nombre: "III. Programático",
+      documentos: docsT3(mes, "III. Programatico", ["Gasto Categoria Programatica.pdf"], ["Gasto por Categoría Programática"]),
+    },
+    {
+      nombre: "IV. Adicional",
+      documentos: docsT3(mes, "IV. Adicional", adicional, nombresAdicionalT3),
+    },
+  ];
+}
+
+export const estadosFinancierosT3_2026 = {
+  periodo: "Tercer Trimestre 2026",
+  lgcg: {
+    id: "lgcg",
+    nombre: "Ley General de Contabilidad Gubernamental",
+    siglas: "LGCG",
+    meses: [
+      { id: "julio", nombre: "Julio 2026", categorias: categoriasT3("julio", archivosPresupuestalesJulAgo, archivosAdicionalJulAgo) },
+      { id: "agosto", nombre: "Agosto 2026", categorias: categoriasT3("agosto", archivosPresupuestalesJulAgo, archivosAdicionalJulAgo) },
+      { id: "septiembre", nombre: "Septiembre 2026", categorias: categoriasT3("septiembre", archivosPresupuestales, archivosAdicionalSeptiembre) },
+    ] as MesLGCG[],
+  },
+  ldf: {
+    id: "ldf",
+    nombre: "Ley de Disciplina Financiera",
+    siglas: "LDF",
+    meses: [
+      {
+        id: "septiembre",
+        nombre: "Septiembre 2026",
+        documentos: docsT3("septiembre", "V. Disciplina Financiera", archivosLDFSeptiembre, nombresLDFSeptiembre),
+      },
+    ] as MesLDF[],
+  },
+};

@@ -12,6 +12,7 @@ type Dependencia = { nombre: string; slug: string; t1: Archivo[]; t2: Archivo[];
 const trimestres = [
   { key: "t1", etiqueta: "Primer Trimestre · Enero – Marzo 2026" },
   { key: "t2", etiqueta: "Segundo Trimestre · Abril – Junio 2026" },
+  { key: "t3", etiqueta: "Tercer Trimestre · Julio – Septiembre 2026" },
 ] as const;
 
 const dependencias: Dependencia[] = [
@@ -297,6 +298,13 @@ const dependencias: Dependencia[] = [
       { nombre: "LTAIPVIL Art. 15 Fr. XIX", archivo: "segundo_trimestre_LTAIPVIL15XIX prot. civil.xlsx" },
       { nombre: "LTAIPVIL Art. 15 Fr. XX", archivo: "segundo trim LTAIPVIL15XX prot. civil.xlsx" },
     ],
+    normatividad: [
+      {
+        nombre: "Reglamento Municipal de Protección Civil",
+        href: "/docs/reglamentos/reglamento-proteccion-civil.pdf",
+        nota: "Aprobado en sesión de Cabildo del 27 de febrero de 2026.",
+      },
+    ],
   },
   {
     nombre: "Oficialía Mayor",
@@ -545,7 +553,172 @@ const dependencias: Dependencia[] = [
       { nombre: "LTAIPVIL Art. 15 Fr. Xb", archivo: "LTAIPVIL15Xb.xlsx" },
     ],
   },
+  {
+    nombre: "Dirección de Pueblos Indígenas y Afromexicanos",
+    slug: "pueblos-indigenas",
+    t1: [],
+    t2: [],
+  },
 ];
+
+// Tercer trimestre 2026 (julio – septiembre). Se guarda aparte del arreglo
+// anterior para no reescribir las listas ya publicadas de t1 y t2.
+const tercerTrimestre: Record<string, Archivo[]> = {
+  "catastro": [
+    { nombre: "LTAIPVIL Art. 15 Fr. IV", archivo: "LTAIPVIL15IV CATASTRO.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XIX", archivo: "LTAIPVIL15XIX CATASTRO 3ER TRIM.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XX", archivo: "LTAIPVIL15XX CATASTRO 3ER TRIM.xlsx" },
+    { nombre: "LTAIPVIL Art. 16 Fr. II E1", archivo: "LTAIPVIL16IIE1 CATASTRO 3ER TRIM.xlsx" },
+    { nombre: "LTAIPVIL Art. 16 Fr. II E2", archivo: "LTAIPVIL16IIE2 CATASTRO 3ER TRIM.xlsx" },
+    { nombre: "LTAIPVIL Art. 16 Fr. II E3", archivo: "LTAIPVIL16IIE3 CATASTRO 3ER TRIM.xlsx" },
+    { nombre: "LTAIPVIL Art. 16 Fr. II E4", archivo: "LTAIPVIL16IIE4 CATASTRO 3ER TRIM.xlsx" },
+    { nombre: "LTAIPVIL Art. 16 Fr. II E5", archivo: "LTAIPVIL16IIE5 CATASTRO 3ER TRIM.xlsx" },
+    { nombre: "LTAIPVIL Art. 16 Fr. II E6", archivo: "LTAIPVIL16IIE6 CATASTRO 3ER TRIM.xlsx" },
+  ],
+  "comandancia": [
+    { nombre: "LTAIPVIL Art. 15 Fr. XIX", archivo: "LTAIPVIL15XIX 3er trim comandancia.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XX", archivo: "LTAIPVIL15XX 3er trim comandancia.xlsx" },
+    { nombre: "LTAIPVIL Art. 16 Fr. II i1", archivo: "LTAIPVIL16IIi1 3er trim comandancia.xlsx" },
+    { nombre: "LTAIPVIL Art. 16 Fr. II i2", archivo: "LTAIPVIL16IIi2 3er trim comandancia.xlsx" },
+    { nombre: "LTAIPVIL Art. 16 Fr. III A", archivo: "LTAIPVIL16IIIA 3er trim comandancia.xlsx" },
+    { nombre: "LTAIPVIL Art. 16 Fr. III B1", archivo: "LTAIPVIL16IIIB1 3er trim comandancia.xlsx" },
+    { nombre: "LTAIPVIL Art. 16 Fr. III B2", archivo: "LTAIPVIL16IIIB2 3er trim comandancia.xlsx" },
+    { nombre: "LTAIPVIL Art. 16 Fr. III C", archivo: "LTAIPVIL16IIIC 3er trim comandancia.xlsx" },
+    { nombre: "LTAIPVIL Art. 16 Fr. III D", archivo: "LTAIPVIL16IIID 3er trim comandancia.xlsx" },
+    { nombre: "LTAIPVIL Art. 16 Fr. III E", archivo: "LTAIPVIL16IIIE 3er trim comandancia.xlsx" },
+    { nombre: "LTAIPVIL Art. 16 Fr. III F", archivo: "LTAIPVIL16IIIF 3er trim comandancia.xlsx" },
+    { nombre: "LTAIPVIL Art. 16 Fr. III G", archivo: "LTAIPVIL16IIIG 3er trim comandancia.xlsx" },
+    { nombre: "LTAIPVIL Art. 16 Fr. III H", archivo: "LTAIPVIL16IIIH 3er trim comandancia.xlsx" },
+    { nombre: "LTAIPVIL Art. 16 Fr. III J", archivo: "LTAIPVIL16IIIJ 3er trim comandancia.xlsx" },
+    { nombre: "LTAIPVIL Art. 16 Fr. III i", archivo: "LTAIPVIL16IIIi 3er trim comandancia.xlsx" },
+  ],
+  "comercio": [
+    { nombre: "LTAIPVIL Art. 15 Fr. XIX", archivo: "LTAIPVIL15XIX COMERCIO.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XX", archivo: "LTAIPVIL15XX COMERCIO.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. LIVa", archivo: "LTAIPVIL15LIVa COMERCIO.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. LIVb", archivo: "LTAIPVIL15LIVb COMERCIO.xlsx" },
+    { nombre: "LTAIPVIL Art. 16 Fr. II B", archivo: "LTAIPVIL16IIB COMERCIO.xlsx" },
+  ],
+  "dif": [
+    { nombre: "LTAIPVIL Art. 15 Fr. XVa", archivo: "LTAIPVIL15XVa DIF 3ER TRIM.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XVb", archivo: "LTAIPVIL15XVb DIF 3ER TRIM.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XIX", archivo: "LTAIPVIL15XIX DIF 3R TRIM.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XX", archivo: "LTAIPVIL15XX DIF 3ER TRIM.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXVI", archivo: "LTAIPVIL15XXVI DIF 3ER.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXVa", archivo: "LTAIPVIL15XXXVa DIF 3ER TRIM.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXVb", archivo: "LTAIPVIL15XXXVb DIF 3ER TRIM.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXVc", archivo: "LTAIPVIL15XXXVc DIF 3ER TRIM.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXVIIIa", archivo: "LTAIPVIL15XXXVIIIa DIF 3ER TRIM.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXVIIIb", archivo: "LTAIPVIL15XXXVIIIb DIF 3ER TRIM.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XLI", archivo: "LTAIPVIL15XLI DIF 3ER TRIM.xlsx" },
+  ],
+  "agropecuario": [
+    { nombre: "LTAIPVIL Art. 15 Fr. XVa", archivo: "LTAIPVIL15XVa 3DO TRIM FOM AGROP.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XVb", archivo: "LTAIPVIL15XVb 3DO TRIM FOM AGROPE.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XIX", archivo: "LTAIPVIL15XIX 3ER TRIM FOMEN AGROPECURIO.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XX", archivo: "LTAIPVIL15XX 3DO TRIM FOM AGROPEC.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXVIIa", archivo: "LTAIPVIL15XXXVIIa 3DO TRIM FOM AGROPE.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXVIIb", archivo: "LTAIPVIL15XXXVIIb 3DO TRIM FOM AGROPE.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXVIIIa", archivo: "LTAIPVIL15XXXVIIIa 3DO TRIM FOM AGROPEC.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXVIIIb", archivo: "LTAIPVIL15XXXVIIIb 3DO TRIM FOM AGROPEC.xlsx" },
+    { nombre: "Art. 70 Fr. XXVIII", archivo: "28-LGT_Art_70_Fr_XXVIII 3ER TRIM FOMEN. AGROPECUARIO.xlsx" },
+  ],
+  "imm": [
+    { nombre: "LTAIPVIL Art. 15 Fr. XVa", archivo: "LTAIPVIL15XVa_TERCER TRIMESTRE_IMM.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XVb", archivo: "LTAIPVIL15XVb_TERCER TRIMESTRE_IMM.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XIX", archivo: "LTAIPVIL15XIX_TERCER TRIMESTRE_IMM.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XX", archivo: "LTAIPVIL15XX_TERCER TRIMESTRE_IMM (1).xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXVa", archivo: "LTAIPVIL15XXXVa_TERCER TRIMESTRE_IMM.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXVb", archivo: "LTAIPVIL15XXXVb_TERCER TRIMESTRE_IMM.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXVc", archivo: "LTAIPVIL15XXXVc_TERCER TRIMESTRE_IMM.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXVIIIa", archivo: "LTAIPVIL15XXXVIIIa_TERCER TRIMESTRE_IMM.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXVIIIb", archivo: "LTAIPVIL15XXXVIIIb_TERCER TRIMESTRE_IMM.xlsx" },
+    { nombre: "Art. 70 Fr. XXVIII", archivo: "28-LGT_Art_70_Fr_XXVIII_TERCER TRIMESTRE_IMM.xlsx" },
+  ],
+  "juridico": [
+    { nombre: "LTAIPVIL Art. 15 Fr. I", archivo: "LTAIPVIL15I JURIDICO 3ER TRIM JURIDICO.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. III", archivo: "LTAIPVIL15III JURIDIDCO 3ER TRIM JURIDIDCO.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. IV", archivo: "LTAIPVIL15IV JURIDICO 3ER TRIM.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XVIa", archivo: "LTAIPVIL15XVIa JURIDICO 3ER.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XIX", archivo: "LTAIPVIL15XIX JURIDICO 3ER TRIM.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XX", archivo: "LTAIPVIL15XX JURIDICO 3ER TRIM.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXVII", archivo: "LTAIPVIL15XXVII JURIDICO 3ER TRIM.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXVa", archivo: "LTAIPVIL15XXXVa JURIDICO 3er TRIM.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXVb", archivo: "LTAIPVIL15XXXVb JURIDICO 3ER TRIM.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXVc", archivo: "LTAIPVIL15XXXVc JURIDICO 3ER TRIM.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXVI", archivo: "LTAIPVIL15XXXVI JURIDICO 3ER TRIM.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XLVIII", archivo: "LTAIPVIL15XLVIII JURIDICO 3ER TRIM.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. LI", archivo: "LTAIPVIL15LI JURIDICO 3ER TRIM.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. LIVa", archivo: "LTAIPVIL15LIVa JURIDICO 3ER TRIM.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. LIVb", archivo: "LTAIPVIL15LIVb JURIDICO 3ER TRIM.xlsx" },
+  ],
+  "oficialía": [
+    { nombre: "LTAIPVIL Art. 15 Fr. IIa", archivo: "LTAIPVIL15IIa 3.ER TRIM OF. MAYOR (2).xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. IIb", archivo: "LTAIPVIL15IIb 3.ER TRIM OF. MAYOR.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. III", archivo: "LTAIPVIL15III 3.ER TRIM OF. MAYOR.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. VII", archivo: "LTAIPVIL15VII 3.ER TRIM OF. MAYOR.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. Xa", archivo: "LTAIPVIL15Xa 3.ER TRIM OF. MAYOR.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. Xb", archivo: "LTAIPVIL15Xb 3.ER TRIM OF. MAYOR.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XIV", archivo: "LTAIPVIL15XIV 3.ER TRIM OF. MAYOR (2).xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XVIa", archivo: "LTAIPVIL15XVIa 3.ER TRIM OF. MAYOR.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XVIb", archivo: "LTAIPVIL15XVIb 3.ER TRIM OF. MAYOR.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XVIII", archivo: "LTAIPVIL15XVIII 3.ER TRIM OF. MAYOR.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XIX", archivo: "LTAIPVIL15XIX 3.ER TRIM OF. MAYOR.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XX", archivo: "LTAIPVIL15XX 3.ER TRIM OF. MAYOR.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. LI", archivo: "LTAIPVIL15LI 3.ER TRIM OF. MAYOR.xlsx" },
+  ],
+  "proteccion-civil": [
+    { nombre: "LTAIPVIL Art. 15 Fr. III", archivo: "LTAIPVIL15III PC 1-jul-30-sep-2026.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XIX", archivo: "LTAIPVIL15XIX PC jul-sep 2026.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XX", archivo: "LTAIPVIL15XX PC 1 jul-30 sep 2026.xlsx" },
+  ],
+  "pueblos-indigenas": [
+    { nombre: "LTAIPVIL Art. 15 Fr. XIX", archivo: "LTAIPVIL15XIX 3ER TRIM DPIA.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XX", archivo: "LTAIPVIL15XX 3ER TRIM DPIA.xlsx" },
+  ],
+  "registro-civil": [
+    { nombre: "LTAIPVIL Art. 15 Fr. XIX", archivo: "LTAIPVIL15XIX reg. civil.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XX", archivo: "LTAIPVIL15XX reg. civil 3ert trim.xlsx" },
+  ],
+  "regiduria": [
+    { nombre: "LTAIPVIL Art. 15 Fr. XVa", archivo: "LTAIPVIL15XVa REGIDURIA tercer trimestre.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XVb", archivo: "LTAIPVIL15XVb REGIDURIA tercer trimestre.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XIX", archivo: "LTAIPVIL15XIX REGIDURIA tercer trimestre.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XX", archivo: "LTAIPVIL15XX REGIDURIA tercer trimestre.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXVII", archivo: "LTAIPVIL15XXVII REGIDURIA tercer trimestre.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXVIIIa", archivo: "LTAIPVIL15XXXVIIIa REGIDURIA tercer trimestre.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXVIIIb", archivo: "LTAIPVIL15XXXVIIIb REGIDURIA tercer trimestre.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. LIVa", archivo: "LTAIPVIL15LIVa regiduria terser trimestre.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. LIVb", archivo: "LTAIPVIL15LIVb regiduria terser trimestre.xlsx" },
+    { nombre: "LTAIPVIL Art. 16 Fr. II K", archivo: "LTAIPVIL16IIK REGIDURIA tercer trimestre.xlsx" },
+    { nombre: "LTAIPVIL Art. 16 Fr. II L", archivo: "LTAIPVIL16IIL REGIDURIA tercer trimestre.xlsx" },
+  ],
+  "sindicatura": [
+    { nombre: "LTAIPVIL Art. 15 Fr. XIX", archivo: "LTAIPVIL15XIX 3ER TRIM SINDICATURA.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XX", archivo: "LTAIPVIL15XX TRIM SINDICATURA.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXIII", archivo: "LTAIPVIL15XXXIII TRIM SINDICATURA.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXIVa", archivo: "LTAIPVIL15XXXIVa TRIM SINDICATURA.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXIVb", archivo: "LTAIPVIL15XXXIVb TRIM SINDICATURA.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXIVc", archivo: "LTAIPVIL15XXXIVc 3ER TRIM SINDICATURA.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXIVd", archivo: "LTAIPVIL15XXXIVd 3ER TRIM SINDICATURA.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXIVe", archivo: "LTAIPVIL15XXXIVe 3ER TRIM SINDICATURA.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXIVf", archivo: "LTAIPVIL15XXXIVf 3ER TRIM SINDICATURA.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXIVg", archivo: "LTAIPVIL15XXXIVg 3ER TRIM SINDICATURA.xlsx" },
+  ],
+  "transparencia": [
+    { nombre: "LTAIPVIL Art. 15 Fr. XIII", archivo: "LTAIPVIL15XIII 3ER TRIM TRANSPARENCIA.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXIXa", archivo: "LTAIPVIL15XXXIXa 3ER TRIM TRANSPARENCIA.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXIXb", archivo: "LTAIPVIL15XXXIXb 3ER TRIM TRANSPARENCIA.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXIXc", archivo: "LTAIPVIL15XXXIXc 3ER TRIM TRANSPARENCIA.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXIXd1", archivo: "LTAIPVIL15XXXIXd1 3ER TRIM TRANSPARENCIA.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXIXd2", archivo: "LTAIPVIL15XXXIXd2 3ER TRIM TRANSPARENCIA.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XLVIa", archivo: "LTAIPVIL15XLVIa 3ER TRIM TRANSPARENCIA.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XLVIb", archivo: "LTAIPVIL15XLVIb 3ER TRIM TRANSPARENCIA.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. LIVa", archivo: "LTAIPVIL15LIVa 3ER TRIM TRASNSPARENCIA.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. LIVb", archivo: "LTAIPVIL15LIVb 3ER TRIM TRANSPARENCIA.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. LIVc", archivo: "LTAIPVIL15LIVc 3ER TRIM TRANSPARENCIA.xlsx" },
+  ],
+};
 
 export default function FraccionesLey875() {
   const [abierta, setAbierta] = useState<string | null>(null);
@@ -560,7 +733,7 @@ export default function FraccionesLey875() {
           </h2>
         </div>
         <p className="text-sm text-brand-600 mb-10 pl-[52px]">
-          Fracciones publicadas por cada dependencia municipal conforme a los artículos 15 y 16 de la Ley de Transparencia y Acceso a la Información Pública para el Estado de Veracruz. Primer y Segundo Trimestre 2026.
+          Fracciones publicadas por cada dependencia municipal conforme a los artículos 15 y 16 de la Ley de Transparencia y Acceso a la Información Pública para el Estado de Veracruz. Primer, Segundo y Tercer Trimestre 2026.
         </p>
 
         <div className="space-y-3">
@@ -578,7 +751,7 @@ export default function FraccionesLey875() {
                       {dep.nombre}
                     </span>
                     <span className="text-xs text-brand-500 hidden sm:inline">
-                      ({dep.t1.length + dep.t2.length} fracciones)
+                      ({dep.t1.length + dep.t2.length + (tercerTrimestre[dep.slug]?.length ?? 0)} fracciones)
                     </span>
                   </div>
                   <ChevronDown
@@ -618,7 +791,7 @@ export default function FraccionesLey875() {
                       </div>
                     )}
                     {trimestres.map(({ key, etiqueta }) => {
-                      const archivos = dep[key];
+                      const archivos = key === "t3" ? tercerTrimestre[dep.slug] ?? [] : dep[key];
                       if (archivos.length === 0) return null;
                       return (
                         <div key={key} className="pt-4">

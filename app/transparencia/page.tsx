@@ -2,7 +2,7 @@ import PageHeader from "@/components/PageHeader";
 import { leyesTransparencia } from "@/lib/data";
 import EstadosFinancieros from "@/components/EstadosFinancieros";
 import FraccionesLey875 from "@/components/FraccionesLey875";
-import { estadosFinancierosT1_2026, estadosFinancierosT2_2026 } from "@/lib/data-transparencia";
+import { estadosFinancierosT1_2026, estadosFinancierosT2_2026, estadosFinancierosT3_2026 } from "@/lib/data-transparencia";
 import { Scale, FileText, ExternalLink, ShieldCheck } from "lucide-react";
 
 export const metadata = {
@@ -28,6 +28,7 @@ export default function TransparenciaPage() {
       <div id="estados-financieros" className="scroll-mt-24">
         <EstadosFinancieros datos={estadosFinancierosT1_2026} />
         <EstadosFinancieros datos={estadosFinancierosT2_2026} />
+        <EstadosFinancieros datos={estadosFinancierosT3_2026} />
       </div>
       <SeccionCompromiso />
     </>

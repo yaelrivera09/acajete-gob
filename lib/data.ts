@@ -469,6 +469,16 @@ export const gruposNormatividad: { id: string; nombre: string; documentos: Docum
         peso: "244 KB",
         fuente: "Gaceta Oficial del Estado, Tomo CLXXXII, Núm. 409 del 23 de diciembre de 2010. El Bando inicia en la página 3.",
       },
+      {
+        id: "proteccion-civil",
+        titulo: "Reglamento Municipal de Protección Civil",
+        descripcion:
+          "Establece el Sistema Municipal de Protección Civil: el Consejo Municipal, los programas y subprogramas de prevención, las declaratorias de emergencia y desastre, las atribuciones de la Dirección Municipal, los grupos voluntarios, las medidas de seguridad y las sanciones.",
+        href: "/docs/reglamentos/reglamento-proteccion-civil.pdf",
+        paginas: 41,
+        peso: "10.4 MB",
+        fuente: "Aprobado en sesión de Cabildo del 27 de febrero de 2026. Documento firmado por el H. Ayuntamiento Constitucional de Acajete, Ver.",
+      },
     ],
   },
   {
