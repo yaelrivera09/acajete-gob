@@ -494,6 +494,16 @@ export const gruposNormatividad: { id: string; nombre: string; documentos: Docum
         paginas: 128,
         peso: "3.7 MB",
       },
+      {
+        id: "programa-anual-adquisiciones-2026",
+        titulo: "Programa Anual de Adquisiciones, Arrendamientos, Servicios y Obra Pública 2026",
+        descripcion:
+          "Programación de las adquisiciones, arrendamientos, servicios y obra pública del ejercicio 2026: fundamento legal, objetivos, políticas y lineamientos de contratación, así como el acta de la primera sesión ordinaria del Subcomité de Adquisiciones.",
+        href: "/docs/reglamentos/programa-anual-adquisiciones-2026.pdf",
+        paginas: 33,
+        peso: "18.3 MB",
+        fuente: "Documento firmado por el H. Ayuntamiento Constitucional de Acajete, Ver. Incluye el acta de la primera sesión ordinaria del Subcomité de Adquisiciones del ejercicio 2026.",
+      },
     ],
   },
 ];
