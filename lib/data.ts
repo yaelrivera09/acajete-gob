@@ -553,6 +553,8 @@ export const avisos = [
       "Recuerda prestar especial atención a niñas y niños menores de cinco años, personas adultas mayores, mujeres embarazadas y personas con enfermedades crónicas.",
     cierre: "La prevención es tarea de todas y todos. ¡En Acajete nos cuidamos todos!",
     imagen: "/images/avisos/temporada-invernal-2026-2027.jpg",
+    ancho: 1280,
+    alto: 1600,
     alt: "Cartel de la campaña Temporada de Frío, de octubre a febrero, con recomendaciones para abrigarse por capas",
     documento: { nombre: "Boletín informativo", href: "/docs/avisos/boletin-temporada-de-frio.pdf" },
   },

@@ -93,8 +93,8 @@ export default function Home() {
                   <Image
                     src={aviso.imagen}
                     alt={aviso.alt}
-                    width={1159}
-                    height={1400}
+                    width={aviso.ancho}
+                    height={aviso.alto}
                     className="w-full h-auto"
                     sizes="(max-width: 1024px) 100vw, 40vw"
                   />
