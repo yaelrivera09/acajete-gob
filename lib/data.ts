@@ -74,12 +74,14 @@ export const directores = [
   { area: "Registro Civil", titular: "Director de Registro Civil", nombre: "Lic. Gustavo Miguel Armenta Luna", correo: "rcivilacajete001@gmail.com", imagen: "/images/directores/registro-civil.jpg" },
   { area: "Obras Públicas", titular: "Director de Obras Públicas", nombre: "Arq. José Antonio Hernández Juan", correo: "opacajete20262029@gmail.com", imagen: null },
   { area: "Área Coordinadora de Archivos", titular: "Titular del Área Coordinadora de Archivos", nombre: "Lic. Jorge Luis Castro Hernández", correo: "jorgeluiscastrohdz@gmail.com", imagen: "/images/directores/archivo.jpg" },
-  { area: "Desarrollo Urbano", titular: "Director de Desarrollo Urbano", nombre: "Ing. Carlos Adrián Miranda Melchor", correo: null, imagen: "/images/directores/desarrollo-urbano.jpg" },
+  { area: "Desarrollo Urbano", titular: "Director de Desarrollo Urbano", nombre: "Ing. Carlos Adrián Miranda Melchor", correo: "catastroacajete526@gmail.com", imagen: "/images/directores/desarrollo-urbano.jpg" },
   { area: "Oficialía Mayor", titular: "Oficial Mayor", nombre: "C. Juan Jorge Ortega Morales", correo: "oficialiamayor2026@gmail.com", imagen: "/images/directores/oficialía.jpg" },
   { area: "Unidad de Transparencia", titular: "Titular de la Unidad de Transparencia", nombre: "Lic. Blanca Estela Carmona García", correo: "transparenciacajete@gmail.com", imagen: "/images/directores/transparencia.jpg" },
   { area: "Fomento Deportivo", titular: "Director de Fomento Deportivo", nombre: "C. Óscar García Falfán", correo: null, imagen: "/images/directores/deportivo.jpg" },
-  { area: "Fomento Agropecuario, Medio Ambiente y Ecología", titular: "Director de Fomento Agropecuario", nombre: "C. Rubén Alarcón Martínez", correo: "fomentoagropecuario2@hotmail.com", imagen: "/images/directores/agropecuario.jpg" },
+  { area: "Fomento Agropecuario, Forestal, Ecología y Medio Ambiente", titular: "Director de Fomento Agropecuario, Forestal, Ecología y Medio Ambiente", nombre: "C. Rubén Alarcón Martínez", correo: "fomentoagropecuario2@hotmail.com", imagen: "/images/directores/agropecuario.jpg" },
   { area: "Parques y Jardines", titular: "Director de Parques y Jardines", nombre: "C. Alejandro García Martínez", correo: null, imagen: "/images/directores/parques.jpg" },
+  { area: "Dirección de Pueblos Indígenas y Afromexicanos", titular: "Director de Pueblos Indígenas y Afromexicanos", nombre: "Jahir Soto Aguilar", correo: "Pueblosacajete2026@gmail.com", imagen: null },
+  { area: "Instituto Municipal de la Juventud", titular: "Director del Instituto de la Juventud", nombre: "Jahir Soto Aguilar", correo: null, imagen: null },
 ];
 
 // ======== TRÁMITES DE REGISTRO CIVIL ========

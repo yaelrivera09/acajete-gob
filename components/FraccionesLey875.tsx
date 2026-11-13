@@ -145,7 +145,7 @@ const dependencias: Dependencia[] = [
     ],
   },
   {
-    nombre: "Fomento Agropecuario",
+    nombre: "Fomento Agropecuario, Forestal, Ecología y Medio Ambiente",
     slug: "agropecuario",
     t1: [
       { nombre: "Art. 70 Fr. XL", archivo: "40-LGT_Art_70_Fr_XL AGROPECUARIO.xlsx" },
@@ -565,7 +565,6 @@ const dependencias: Dependencia[] = [
 // anterior para no reescribir las listas ya publicadas de t1 y t2.
 const tercerTrimestre: Record<string, Archivo[]> = {
   "catastro": [
-    { nombre: "LTAIPVIL Art. 15 Fr. IV", archivo: "LTAIPVIL15IV CATASTRO.xlsx" },
     { nombre: "LTAIPVIL Art. 15 Fr. XIX", archivo: "LTAIPVIL15XIX CATASTRO 3ER TRIM.xlsx" },
     { nombre: "LTAIPVIL Art. 15 Fr. XX", archivo: "LTAIPVIL15XX CATASTRO 3ER TRIM.xlsx" },
     { nombre: "LTAIPVIL Art. 16 Fr. II E1", archivo: "LTAIPVIL16IIE1 CATASTRO 3ER TRIM.xlsx" },
@@ -651,6 +650,19 @@ const tercerTrimestre: Record<string, Archivo[]> = {
     { nombre: "LTAIPVIL Art. 15 Fr. LI", archivo: "LTAIPVIL15LI JURIDICO 3ER TRIM.xlsx" },
     { nombre: "LTAIPVIL Art. 15 Fr. LIVa", archivo: "LTAIPVIL15LIVa JURIDICO 3ER TRIM.xlsx" },
     { nombre: "LTAIPVIL Art. 15 Fr. LIVb", archivo: "LTAIPVIL15LIVb JURIDICO 3ER TRIM.xlsx" },
+  ],
+  "obras-publicas": [
+    { nombre: "LTAIPVIL Art. 15 Fr. XVa", archivo: "LTAIPVIL15XVa 3ER TRIM DOP.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XVb", archivo: "LTAIPVIL15XVb 3ER TRIM dop.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XIX", archivo: "LTAIPVIL15XIX 3ER TRIM dop.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XX", archivo: "LTAIPVIL15XX 3ER TRIM dop.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXVII", archivo: "LTAIPVIL15XXVII 3ER TRIM dop.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXII", archivo: "LTAIPVIL15XXXII 3ER TRIM Dop.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXVIIa", archivo: "LTAIPVIL15XXXVIIa 3ER TRIM DOP.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXVIIb", archivo: "LTAIPVIL15XXXVIIb 3ER TRIM DOP.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXVIIIa", archivo: "LTAIPVIL15XXXVIIIa 3ER TRIM DOP.xlsx" },
+    { nombre: "LTAIPVIL Art. 15 Fr. XXXVIIIb", archivo: "LTAIPVIL15XXXVIIIb 3ER TRIM DOP.xlsx" },
+    { nombre: "Art. 70 Fr. XXVIII", archivo: "28-LGT_Art_70_Fr_XXVIII 3ER TRIM.xlsx" },
   ],
   "oficialía": [
     { nombre: "LTAIPVIL Art. 15 Fr. IIa", archivo: "LTAIPVIL15IIa 3.ER TRIM OF. MAYOR (2).xlsx" },
