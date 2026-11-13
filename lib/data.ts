@@ -81,7 +81,7 @@ export const directores = [
   { area: "Fomento Agropecuario, Forestal, Ecología y Medio Ambiente", titular: "Director de Fomento Agropecuario, Forestal, Ecología y Medio Ambiente", nombre: "C. Rubén Alarcón Martínez", correo: "fomentoagropecuario2@hotmail.com", imagen: "/images/directores/agropecuario.jpg" },
   { area: "Parques y Jardines", titular: "Director de Parques y Jardines", nombre: "C. Alejandro García Martínez", correo: null, imagen: "/images/directores/parques.jpg" },
   { area: "Dirección de Pueblos Indígenas y Afromexicanos", titular: "Director de Pueblos Indígenas y Afromexicanos", nombre: "Jahir Soto Aguilar", correo: "Pueblosacajete2026@gmail.com", imagen: null },
-  { area: "Instituto Municipal de la Juventud", titular: "Director del Instituto de la Juventud", nombre: "Jahir Soto Aguilar", correo: null, imagen: null },
+  { area: "Instituto Municipal de la Juventud", titular: "Director del Instituto de la Juventud", nombre: "Jahir Soto Aguilar", correo: "institutodelajuventudacajete@gmail.com", imagen: null },
 ];
 
 // ======== TRÁMITES DE REGISTRO CIVIL ========
