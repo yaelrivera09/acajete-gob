@@ -446,7 +446,7 @@ export type DocumentoNormativo = {
   fuente?: string;
 };
 
-export const gruposNormatividad: { id: string; nombre: string; documentos: DocumentoNormativo[] }[] = [
+export const gruposNormatividad: { id: string; nombre: string; nota?: string; documentos: DocumentoNormativo[] }[] = [
   {
     id: "reglamentos",
     nombre: "Reglamentos",
@@ -505,6 +505,59 @@ export const gruposNormatividad: { id: string; nombre: string; documentos: Docum
         paginas: 33,
         peso: "18.3 MB",
         fuente: "Documento firmado por el H. Ayuntamiento Constitucional de Acajete, Ver. Incluye el acta de la primera sesión ordinaria del Subcomité de Adquisiciones del ejercicio 2026.",
+      },
+    ],
+  },
+
+  {
+    id: "cuentas-publicas",
+    nombre: "Cuentas Públicas",
+    nota: "Documentos digitalizados. Se publican completos, con todas sus páginas; las imágenes se optimizaron para que la descarga sea más ligera.",
+    documentos: [
+      {
+        id: "cuenta-publica-2025",
+        titulo: "Cuenta Pública 2025",
+        descripcion:
+          "Cuenta Pública del ejercicio fiscal 2025 del H. Ayuntamiento de Acajete, remitida al H. Congreso del Estado de Veracruz a través del Órgano de Fiscalización Superior. Incluye los estados financieros del ejercicio y el acta de Cabildo que aprueba su envío.",
+        href: "/docs/cuentas-publicas/cuenta-publica-2025.pdf",
+        paginas: 116,
+        peso: "23.8 MB",
+      },
+      {
+        id: "cuenta-publica-2024",
+        titulo: "Cuenta Pública 2024",
+        descripcion:
+          "Cuenta Pública del ejercicio fiscal 2024 del H. Ayuntamiento de Acajete, remitida al H. Congreso del Estado de Veracruz a través del Órgano de Fiscalización Superior. Incluye los estados financieros del ejercicio y el acta de Cabildo que aprueba su envío.",
+        href: "/docs/cuentas-publicas/cuenta-publica-2024.pdf",
+        paginas: 104,
+        peso: "18.9 MB",
+      },
+      {
+        id: "cuenta-publica-2023",
+        titulo: "Cuenta Pública 2023",
+        descripcion:
+          "Cuenta Pública del ejercicio fiscal 2023 del H. Ayuntamiento de Acajete, remitida al H. Congreso del Estado de Veracruz a través del Órgano de Fiscalización Superior. Incluye los estados financieros del ejercicio y el acta de Cabildo que aprueba su envío.",
+        href: "/docs/cuentas-publicas/cuenta-publica-2023.pdf",
+        paginas: 91,
+        peso: "20.4 MB",
+      },
+      {
+        id: "cuenta-publica-2022",
+        titulo: "Cuenta Pública 2022",
+        descripcion:
+          "Cuenta Pública del ejercicio fiscal 2022 del H. Ayuntamiento de Acajete, remitida al H. Congreso del Estado de Veracruz a través del Órgano de Fiscalización Superior. Incluye los estados financieros del ejercicio y el acta de Cabildo que aprueba su envío.",
+        href: "/docs/cuentas-publicas/cuenta-publica-2022.pdf",
+        paginas: 96,
+        peso: "19.3 MB",
+      },
+      {
+        id: "cuenta-publica-2021",
+        titulo: "Cuenta Pública 2021",
+        descripcion:
+          "Cuenta Pública del ejercicio fiscal 2021 del H. Ayuntamiento de Acajete, remitida al H. Congreso del Estado de Veracruz a través del Órgano de Fiscalización Superior. Incluye los estados financieros del ejercicio y el acta de Cabildo que aprueba su envío.",
+        href: "/docs/cuentas-publicas/cuenta-publica-2021.pdf",
+        paginas: 180,
+        peso: "25.9 MB",
       },
     ],
   },

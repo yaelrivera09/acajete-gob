@@ -3,9 +3,9 @@ import { gruposNormatividad } from "@/lib/data";
 import { FileText, ExternalLink, Download, Scale } from "lucide-react";
 
 export const metadata = {
-  title: "Reglamentos Municipales | H. Ayuntamiento de Acajete",
+  title: "Reglamentos y Cuentas Públicas | H. Ayuntamiento de Acajete",
   description:
-    "Reglamentos y normatividad vigente del H. Ayuntamiento de Acajete, Veracruz, así como el Plan Municipal de Desarrollo 2026-2029. Consulta y descarga en formato PDF.",
+    "Reglamentos y normatividad vigente del H. Ayuntamiento de Acajete, Veracruz, el Plan Municipal de Desarrollo 2026-2029 y las Cuentas Públicas de 2021 a 2025. Consulta y descarga en formato PDF.",
 };
 
 export default function ReglamentosPage() {
@@ -37,6 +37,10 @@ export default function ReglamentosPage() {
                     {grupo.nombre}
                   </h2>
                 </div>
+
+                {grupo.nota && (
+                  <p className="text-sm text-brand-600 mb-6 pl-[52px] max-w-3xl">{grupo.nota}</p>
+                )}
 
                 <div className="space-y-5">
                   {grupo.documentos.map((doc) => (
