@@ -2,12 +2,10 @@
 
 import { useState } from "react";
 import { ChevronDown, FileText, Download } from "lucide-react";
-import { estadosFinancierosT1_2026, type Categoria, type Documento } from "@/lib/data-transparencia";
+import { estadosFinancierosT1_2026, type Categoria, type Documento, type PaqueteFinanciero } from "@/lib/data-transparencia";
 
-type Datos = typeof estadosFinancierosT1_2026;
-
-export default function EstadosFinancieros({ datos = estadosFinancierosT1_2026 }: { datos?: Datos }) {
-  const { lgcg, ldf, periodo } = datos;
+export default function EstadosFinancieros({ datos = estadosFinancierosT1_2026 }: { datos?: PaqueteFinanciero }) {
+  const { lgcg, ldf, sevac, periodo } = datos;
 
   return (
     <section className="pb-20">
@@ -45,7 +43,7 @@ export default function EstadosFinancieros({ datos = estadosFinancierosT1_2026 }
         </div>
 
         {/* LDF */}
-        <div>
+        <div className={sevac ? "mb-10" : ""}>
           <div className="flex items-center gap-3 mb-5">
             <span className="bg-accent-600 text-white text-xs font-bold px-3 py-1 rounded-sm tracking-wider uppercase">
               {ldf.siglas}
@@ -61,6 +59,24 @@ export default function EstadosFinancieros({ datos = estadosFinancierosT1_2026 }
             ))}
           </div>
         </div>
+
+        {/* SEVAC */}
+        {sevac && (
+          <div>
+            <div className="flex items-center gap-3 mb-5">
+              <span className="bg-brand-600 text-white text-xs font-bold px-3 py-1 rounded-sm tracking-wider uppercase">
+                {sevac.siglas}
+              </span>
+              <span className="text-brand-700 text-sm font-medium">{sevac.nombre}</span>
+            </div>
+
+            <div className="border border-brand-200 rounded-sm overflow-hidden">
+              <div className="px-6 py-5 bg-brand-50/40">
+                <ListaDocumentos documentos={sevac.documentos} />
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

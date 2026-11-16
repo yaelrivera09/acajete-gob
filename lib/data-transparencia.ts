@@ -125,9 +125,19 @@ function categoriasLGCG(mes: string, contables: string[]) {
 }
 
 export type Documento = { nombre: string; href: string };
+export type Grupo = { id: string; nombre: string; siglas: string };
 export type Categoria = { nombre: string; documentos: Documento[] };
 export type MesLGCG = { id: string; nombre: string; categorias: Categoria[] };
 export type MesLDF = { id: string; nombre: string; documentos: Documento[] };
+
+// Los tres paquetes trimestrales comparten esta forma. El bloque de SEVAC es
+// opcional: solo el tercer trimestre lo trae.
+export type PaqueteFinanciero = {
+  periodo: string;
+  lgcg: Grupo & { meses: MesLGCG[] };
+  ldf: Grupo & { meses: MesLDF[] };
+  sevac?: Grupo & { documentos: Documento[] };
+};
 
 // Marzo se publica con el paquete completo entregado por Tesorería, que
 // incluye anexos bancarios ausentes en enero y febrero.
@@ -232,7 +242,7 @@ const categoriasMarzo: Categoria[] = [
   { nombre: "VII. Estados de Cuenta", documentos: docsMarzo("IV. Adicional/ESTADOS DE CUENTA", marzoEstadosDeCuenta) },
 ];
 
-export const estadosFinancierosT1_2026 = {
+export const estadosFinancierosT1_2026: PaqueteFinanciero = {
   periodo: "Primer Trimestre 2026",
   lgcg: {
     id: "lgcg",
@@ -358,7 +368,7 @@ const nombresLDFJunio = [
   "Informe sobre Estudios Actuariales",
 ];
 
-export const estadosFinancierosT2_2026 = {
+export const estadosFinancierosT2_2026: PaqueteFinanciero = {
   periodo: "Segundo Trimestre 2026",
   lgcg: {
     id: "lgcg",
@@ -506,7 +516,18 @@ function categoriasT3(mes: string, presupuestales: string[], adicional: string[]
   ];
 }
 
-export const estadosFinancierosT3_2026 = {
+
+// SEVAC — Sistema de Evaluaciones de la Armonización Contable. El Ayuntamiento
+// entrega estos documentos junto con el cierre del trimestre.
+const documentosSevacT3: [string, string][] = [
+  ["3er Reporte Trimestral _FAISMUN 2026.pdf", "Reporte Trimestral FAISMUN 2026 — Acuse SIMVER"],
+  ["Información Anual de Ejercicio del Gasto Federalizado y reintegros Ejercicio 2025.pdf", "Ejercicio del Gasto Federalizado y Reintegros — Ejercicio 2025"],
+  ["Relación de Cuentas Bancarias Productivas Especificas Ejercicio 2025.pdf", "Relación de Cuentas Bancarias Productivas Específicas — Ejercicio 2025"],
+  ["Programa Anual de Evalauciones (PAE) 2026.pdf", "Programa Anual de Auditoría, Evaluación y Trabajo de la Contraloría Interna 2026"],
+  ["Manual de Contabilidad Gubernamental.pdf", "Manual de Contabilidad Gubernamental — Plan de Cuentas"],
+];
+
+export const estadosFinancierosT3_2026: PaqueteFinanciero = {
   periodo: "Tercer Trimestre 2026",
   lgcg: {
     id: "lgcg",
@@ -529,5 +550,14 @@ export const estadosFinancierosT3_2026 = {
         documentos: docsT3("septiembre", "V. Disciplina Financiera", archivosLDFSeptiembre, nombresLDFSeptiembre),
       },
     ] as MesLDF[],
+  },
+  sevac: {
+    id: "sevac",
+    nombre: "Sistema de Evaluaciones de la Armonización Contable",
+    siglas: "SEVAC",
+    documentos: documentosSevacT3.map(([archivo, nombre]) => ({
+      nombre,
+      href: `${BASE_T3}/sevac/${e(archivo)}`,
+    })),
   },
 };
