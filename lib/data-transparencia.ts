@@ -525,6 +525,7 @@ const documentosSevacT3: [string, string][] = [
   ["Relación de Cuentas Bancarias Productivas Especificas Ejercicio 2025.pdf", "Relación de Cuentas Bancarias Productivas Específicas — Ejercicio 2025"],
   ["Programa Anual de Evalauciones (PAE) 2026.pdf", "Programa Anual de Auditoría, Evaluación y Trabajo de la Contraloría Interna 2026"],
   ["Manual de Contabilidad Gubernamental.pdf", "Manual de Contabilidad Gubernamental — Plan de Cuentas"],
+  ["Indicadores de Resultados.pdf", "Indicadores de Resultados"],
 ];
 
 export const estadosFinancierosT3_2026: PaqueteFinanciero = {
